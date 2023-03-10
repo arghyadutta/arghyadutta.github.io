@@ -1,3 +1,5 @@
+Some old texts that I removed from the webpage.
+
 <li>11/2021: I joined Institute of Biochemistry II (IBC2), Goethe University, Frankfurt, Germany as a postdoc.</li>
 <li>08/2021: I presented our work on drug–membrane permeability at the Molecular Biology Unit of Indian Institute of Science, Bangalore, India.</li>
 <li>06/2021: Our paper <a href="https://doi.org/10.1063/5.0053931">Data-driven equation for drug–membrane permeability across drugs and membranes</a> got published in the Journal of Chemical Physics.</li>
