@@ -1,1 +1,0 @@
-Arghya's personal webpage.
