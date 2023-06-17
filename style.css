@@ -9,8 +9,7 @@ html {
     margin-left: auto;
     margin-right: auto;
     font-size: 20px;
-    /* font-weight: 200; */
-    font-family: sans-serif;
+    font-family: custom-sans-serif;
     line-height: 1.4;
     /* background-color: rgb(255, 255, 248); */
 }
@@ -52,12 +51,6 @@ a:hover {
 .text {
     padding-left: 20px;
     float: left;
-}
-
-h1,
-h2,
-h3 {
-    font-family: custom-sans-serif;
 }
 
 h1 {
