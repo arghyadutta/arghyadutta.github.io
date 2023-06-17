@@ -1,21 +1,18 @@
 @font-face {
-    font-family: "custom-serif";
-    src: url("./fonts/Merriweather/Merriweather-Light.ttf");
-}
-
-@font-face {
     font-family: "custom-sans-serif";
     src: url("./fonts/Open_Sans/OpenSans-Regular.ttf");
 }
 
 html {
     width: 90%;
-    max-width: 720px;
+    max-width: 900px;
     margin-left: auto;
     margin-right: auto;
-    font-size: 18px;
-    font-family: custom-sans-serif;
-    line-height: 1.5
+    font-size: 20px;
+    font-weight: 200;
+    font-family: sans-serif;
+    line-height: 1.4;
+    background-color: rgb(255, 255, 248);
 }
 
 body {
@@ -32,11 +29,12 @@ a {
 a:link,
 a:visited {
     color: #0645AD;
+    color: rgb(176, 0, 0);
 }
 
 a:hover {
     border-bottom: 1px solid;
-    background: #e6f0ff;
+    /* background: #e6f0ff; */
 }
 
 .container {
@@ -59,7 +57,7 @@ a:hover {
 h1,
 h2,
 h3 {
-    font-family: custom-serif;
+    font-family: custom-sans-serif;
 }
 
 h1 {
@@ -72,4 +70,8 @@ h2 {
 
 h3 {
     font-size: 1.1em;
+}
+
+strong{
+    font-weight: 400;
 }
