@@ -9,10 +9,10 @@ html {
     margin-left: auto;
     margin-right: auto;
     font-size: 20px;
-    font-weight: 200;
+    /* font-weight: 200; */
     font-family: sans-serif;
     line-height: 1.4;
-    background-color: rgb(255, 255, 248);
+    /* background-color: rgb(255, 255, 248); */
 }
 
 body {
@@ -29,7 +29,7 @@ a {
 a:link,
 a:visited {
     color: #0645AD;
-    color: rgb(176, 0, 0);
+    /* color: rgb(176, 0, 0); */
 }
 
 a:hover {
@@ -70,8 +70,4 @@ h2 {
 
 h3 {
     font-size: 1.1em;
-}
-
-strong{
-    font-weight: 400;
 }
