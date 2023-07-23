@@ -1,13 +1,13 @@
 html {
     width: 90%;
-    max-width: 1050px;
+    max-width: 800px;
     margin-left: auto;
     margin-right: auto;
     font-size: 20px;
     font-family: "Helvetica Neue", Arial, sans-serif;
     line-height: 1.5;
-    color: #262626;
-    background-color: #fdfdfd;
+    color: rgb(54, 54, 54);
+    /* background-color: #fdfdfd; */
 }
 
 body {
@@ -23,8 +23,8 @@ a {
 
 a:link,
 a:visited {
-    color: #0e54c4;
     /* color: rgb(176, 0, 0); */
+    color: rgb(64, 103, 141);
 }
 
 a:hover {
@@ -32,9 +32,10 @@ a:hover {
     background: #e6f0ff;
 }
 
-u{
-    text-decoration: underline;
+u {
+    text-decoration: none;
     font-style: italic;
+    font-weight: 500;
 }
 
 img {
