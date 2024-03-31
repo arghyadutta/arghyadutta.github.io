@@ -6,8 +6,7 @@ html {
     font-size: 20px;
     font-family: "Helvetica Neue", Arial, sans-serif;
     line-height: 1.5;
-    /* color: rgb(54, 54, 54); */
-    /* background-color: #fdfdfd; */
+    background: white;
 }
 
 body {
@@ -23,7 +22,6 @@ a {
 
 a:link,
 a:visited {
-    /* color: rgb(176, 0, 0); */
     color: rgb(64, 103, 141);
 }
 
@@ -39,3 +37,8 @@ img {
     padding-left: 20px;
     padding-bottom: 20px;
 }
+*::selection {
+    /* background: rgba(255, 255, 0, 0.3); */
+    background: rgba(248, 228, 54, 1);
+    color: #000;
+  }
