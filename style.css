@@ -3,7 +3,7 @@ html {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-    font-size: 18px;
+    font-size: 17px;
     font-family: sans-serif;
     line-height: 1.3;
     color: black;
@@ -19,7 +19,7 @@ a:link,
 a:visited {
     /* color: rgb(64, 103, 141);  */
     /* color: #0645AD; */
-    color: blue;
+    color: #0000d0;
 }
 
 /* a:visited {
@@ -65,10 +65,10 @@ dd {
 }
 
 
-/* ul {
+ul {
     padding-left: 1.5em;
-} */
+}
 
-/* li {
+li {
     margin: 0.5em 0em 0.5em 0.5em;
-} */
+}
