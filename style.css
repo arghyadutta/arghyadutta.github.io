@@ -7,6 +7,6 @@ body {
 
 a:link,
 :visited {
-    color: blue;
+    color: blue  ;
     text-decoration: none;
 }
