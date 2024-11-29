@@ -24,8 +24,13 @@ img {
 
 a:link,
 :visited {
-    color: #2774c1;
+    color: #808080;
     text-decoration: none;
+
+}
+
+a:hover {
+    background-color: rgb(255, 245, 134);
 }
 
 h2,
