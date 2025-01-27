@@ -1,0 +1,11 @@
+<h3>Biographies</h3>
+<li><a href="https://openlibrary.org/works/OL14855244W/Niels_Bohr?edition=key%3A/books/OL1099064M">Niels Bohs: gentle genius of Denmark</a> by Ray Spangenburg</li>
+<li><a href="https://openlibrary.org/works/OL514629W/Surely_You%27re_Joking_Mr._Feynman">Surely You're Joking, Mr. Feynman!</a> by Feynman and Leighton</li>
+<li><a href="https://openlibrary.org/works/OL20022366W/A_singularly_unfeminine_profession">Singularly Unfeminine Profession, A: One Woman’s Journey in Physics</a> by Mary K. Gaillard</li>
+
+<li><a href="https://openlibrary.org/books/OL2716488M/Littlewood's_Miscellany">Littlewood's Miscellany</a> by J. E. Littlewood</li>
+<li><a href="https://www.worldscientific.com/worldscibooks/10.1142/5626#t=aboutBook">Petit Point</a> by de Gennes</li>
+<li><a href="https://openlibrary.org/works/OL8254481W/Enrico_Fermi">Enrico Fermi Physicist</a> by Emilio Segre</li>
+<li><a href="https://openlibrary.org/works/OL1439437W/Madame_Curie?edition=key%3A/books/OL6040407M">Madame Curie: A Biography</a> By Eve Curie</li>
+<li><a href="https://openlibrary.org/works/OL2776841W/I_want_to_be_a_mathematician?edition=key%3A/books/OL18288933M">I Want to be a Mathematician</a> by Paul Halmos</li>
+<li><a href="https://openlibrary.org/works/OL1857638W/The_Man_Who_Loved_Only_Numbers?edition=key%3A/books/OL354306M">The Man Who Loved Only Numbers</a> by Paul Hoffman</li>
