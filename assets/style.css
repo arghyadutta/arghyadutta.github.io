@@ -5,7 +5,7 @@
 
 body {
     margin: 0 auto;
-    margin-bottom: 40px;
+    margin-bottom: 100px;
     margin-top: 40px;
     width: 93%;
     max-width: 650px;
@@ -43,6 +43,7 @@ dl {
 dt {
     display: list-item;
 }
+
 /* dd{
     color: #780a0a;
 } */
@@ -66,6 +67,15 @@ h3 {
     font-size: 1.1em;
     font-weight: 400;
 }
+
 summary {
     color: rgba(175, 62, 1, 0.656);
-  }
+}
+
+blockquote {
+    color: #555;
+    border-left: 4px solid #ccc;
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+    background-color: #fdfdfd;
+}
