@@ -13,7 +13,7 @@ body {
     /* font-family: MyFont; */
     font-family: Arial, Helvetica, sans-serif;
     font-size: 18px;
-    color: #383838;
+    /* color: #383838; */
 }
 
 *::selection {
@@ -43,6 +43,9 @@ dl {
 dt {
     display: list-item;
 }
+/* dd{
+    color: #780a0a;
+} */
 
 hr {
     border: solid 1px #ccc;
