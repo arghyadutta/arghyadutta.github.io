@@ -63,3 +63,6 @@ h3 {
     font-size: 1.1em;
     font-weight: 400;
 }
+summary {
+    color: rgba(175, 62, 1, 0.656);
+  }
