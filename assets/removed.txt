@@ -9,3 +9,4 @@
 <li><a href="https://openlibrary.org/works/OL1439437W/Madame_Curie?edition=key%3A/books/OL6040407M">Madame Curie: A Biography</a> By Eve Curie</li>
 <li><a href="https://openlibrary.org/works/OL2776841W/I_want_to_be_a_mathematician?edition=key%3A/books/OL18288933M">I Want to be a Mathematician</a> by Paul Halmos</li>
 <li><a href="https://openlibrary.org/works/OL1857638W/The_Man_Who_Loved_Only_Numbers?edition=key%3A/books/OL354306M">The Man Who Loved Only Numbers</a> by Paul Hoffman</li>
+<li><a href="https://www.youtube.com/playlist?list=PLPeStI124dee1ByfcDzRvPxKDNb0GQjmo">Philosophy of the humanities</a> by Victor Gijsbers.</li>
