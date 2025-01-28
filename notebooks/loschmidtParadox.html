@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Arghya Dutta</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="../assets/favicon_io/site.webmanifest">
+    <link rel="stylesheet" href="../assets/style.css">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"> </script>
+    <script>window.MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] } };</script>
+</head>
+<em><a href="../notebooks.html">Notebooks</a></em>
+
+<h1>Loschmidt Paradox</h1>
+
+<p>
+    Consider the time evolution of a system $N$ particles. In the $6N$-dimensional phase space, a point $(q_i, p_i)\equiv(q_1,p_1,q_2,p_2,\cdots,q_{3N},p_{3N})$ denote one microstate. Loschmidt argued that for a system starting from $(q_i(t_0),p_i(t_0))$ and evolving to $(q_i(t_f),p_f(t_f))$, if we reverse the momenta of all particles at $t_f$—i.e., if we can prepare a system described by $(q_i(t_0),-p_i(t_0))$—then the system should evolve back to the initial state at a later time because the laws of classical mechanics are time reversible. If true, this implies the amazing phenomenon of a gas spontaneously returning to a smaller volume from a larger volume.
+</p>
+
+<p>
+    Boltzmann solved this paradox by noting that:
+</p>
+
+<dl>
+    <dt>
+        An overwhelmingly large number of microstates are compatible with a macrostate, specified by a few state quantities like pressure, volume, and temperature. That means the initial state typically evolves to one of numerous possible microstates which cannot be distinguished macroscopically.
+    </dt>
+    <dt>
+        Moreover, all the microstates with same total energy can be found with equal probability.
+    </dt>
+    <dt>
+        That means the <em>exactly one</em> final state that allows the system to go back to the initial state is the actual final state can occur with a miniscule probability.
+    </dt>
+    <dt>
+        As a concrete example, the number of microstate of a system with $N$ particles is proportional to $V^N$. So if you halve the volume, the available microstates decrease by $1/2^N$. So, in the thermodynamic limit, the probability of a gas spontaneously collapsing to half of its volume is $1/2^N \rightarrow 0$.
+    </dt>
+</dl>
+
+<h2>Recommended</h2>
+<dl>
+    <dt>
+        Greiner, W., Neise, L., & Stöcker, H. (1995). Thermodynamics and Statistical Mechanics. Springer. (pp. 43–46)
+    </dt>
+    <dt>
+        Swendsen, R. H. (2008). <em>Explaining irreversibility</em>. <a href="https://doi.org/10.1119/1.2894523">American Journal of Physics, 76(7), 643–648</a>. 
+    </dt>
+</dl>
+
+
+
+</body>
+
+</html>

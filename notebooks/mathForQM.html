@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Arghya Dutta</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="../assets/favicon_io/site.webmanifest">
+    <link rel="stylesheet" href="../assets/style.css">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"> </script>
+    <script>window.MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] } };</script>
+</head>
+<em><a href="../notebooks.html">Notebooks</a></em>
+
+<h1>Basic Math for Quantum Mechanics</h1>
+
+<mark>Why you may not want to read this page</mark> Incomplete, brief, and evolving ``lookup table'' on quantum mechanics for personal use, closely following Nielsen and Chuang (2010) and other books. I tried to cite them carefully, but let me know if I missed citing someone. If you find typos (or conceptual errors!), please tell me about it (argphy@gmail.com). Also, feel free to use the material for your own use (it will be nice if you tell me about that, but no pressure. 🙂).
+<hr>
+
+<h2>Recommended</h2>
+
+<dl>
+    <dt>
+        Sadun, L. A. (2008). <em>Applied linear algebra: The decoupling principle</em> (2nd ed). American Mathematical Society.
+    </dt>
+    <dt>
+        Nielsen, M. A., & Chuang, I. L. (2010). <em>Quantum computation and quantum information</em> (10th anniversary ed). Cambridge University Press.
+    </dt>
+    <dt>
+        Johnston, N. (2021). <em>Advanced Linear and Matrix Algebra</em>. Springer International Publishing.
+    </dt>
+    <dt>
+        Cohen-Tannoudji, C., Diu, B., & Laloë, F. (2020). <em>Quantum mechanics. Volume 1: Basic concepts, tools, and applications</em> (S. Reid Hemley, N. Ostrowsky, & D. Ostrowsky, Trans.; Second edition). Wiley-VCH Verlag GmbH & Co. KGaA.
+    </dt>
+    <dt>
+        Savov, I. (2020). <em>No Bullshit Guide to Linear Algebra</em> (2nd V2.2 ed. edition). Minireference Co.
+    </dt>
+    <dt>
+        Mermin, N. D. (2007). <em>Quantum Computer Science: An Introduction</em>. Cambridge University Press.
+    </dt>
+</dl>
+<hr>
+<h2>Vector Space</h2>
+
+<p>
+    Let $\mathcal{V}$ be a set of elements (vectors) with two operations, addition and multiplication with a scalar from a field $\mathbb{F}$ (typically $\mathbb{C}$ in QM). $\mathcal{V}$ is a called vector space if for vectors $\ket{v},\ket{w},\ket{x} \in \mathcal{V}$ and scalars $c,d \in \mathbb{F}$, the following ten conditions are satisfied:
+</p>
+
+<ol>
+    <li> Closure under addition: $\ket{v} + \ket{w} \in \mathcal{V}$</li>
+    <li> Commutativity: $\ket{v} + \ket{w} = \ket{w} + \ket{v}$</li>
+    <li> Associativity: $(\ket{v}+\ket{w})+\ket{x}=\ket{v}+(\ket{w}+\ket{x})$</li>
+    <li> Existence of a 'zero vector' $\ket{0}$ such that $\ket{v}+\ket{0}=\ket{v}$</li>
+    <li> Existence of an 'inverse': a vector $-\ket{v}$ such that $\ket{v}+(-\ket{v})=\ket{0}$</li>
+    <li> Closure under scalar multiplication: $c\ket{v} \in \mathcal{V}$</li>
+    <li> Distributivity: $c(\ket{v}+\ket{w}) = c\ket{v} +c\ket{w}$</li>
+    <li> Distributivity: $(c+d)\ket{v}=c\ket{v}+d\ket{v}$</li>
+    <li> $c(d\ket{v})=(cd)\ket{v}$</li>
+    <li> $1\ket{v}=\ket{v}$</li>
+</ol>
+
+<p>
+    Examples of vector spaces include $\mathbb{R}^n$, $\mathbb{C}^n$, $\mathcal{M}_{m,n}(\mathbb{F})$ (space of $m\times n$ matrices with elements from the field $\mathbb{F}$). One <em>important point</em> is when it is said that $\mathcal{V}$ is a vector space over a field $\mathbb{F}$, it means that the scalars used in the scalar multiplication comes from $\mathbb{F}$ (also known as a <em>ground field</em>), <em>not</em> that the elements of the vectors are from $\mathbb{F}$. For example Hermitian matrices can be defined over $\mathbb{R}$ or $\mathbb{C}$, though its elements are from $\mathbb{C}$. This is important since, for example, the space of $n\times n$ Hermitian matrices $\mathcal{M}^{\rm H}_n$ is not a vector space over $\mathbb{C}$, but it is a vector space over $\mathbb{R}$. Example: $A=\begin{pmatrix} 0 1 \\ 1 0 \end{pmatrix} \in \mathcal{M}^{\rm H}_2$ but since $(iA)^\dagger\neq iA$, it's not Hermitian, so $\mathcal{M}^{\rm H}_2$ isn't closed under scalar multiplication over $\mathbb{C}$.
+</p>
+
+<h2>Subspace</h2>
+
+<p>
+    If $\mathcal{V}$ is a vector space and $\mathcal{S} \subseteq \mathcal{V}$, then $\mathcal{S}$ is a subspace iff it is closed under addition and scalar multiplication. (You need not check all ten properties. See p. 9, Johnston (2021) for a proof).
+</p>
+
+<p>
+    Example: the set of non-invertible $2 \times 2$ matrices is *not* a subspace of $\mathcal{M}_2$. $\begin{smallmatrix}1 0 \\ 0 0\end{smallmatrix}$ and $\begin{smallmatrix} 0 0 \\ 0 1\end{smallmatrix}$ are non-invertible but their sum $\begin{smallmatrix}1 0 \\ 0 1\end{smallmatrix}$ is invertible.
+</p>
+
+<h2>Linear Combination</h2>
+
+<p>
+    Any vector of the form $\sum^k_{i=1} c_i \ket{v_i}$ is called a linear combination. Interesting: The Identity matrix *cannot* be written as a linear combination of Pauli matrices.
+</p>
+
+<h2>Span</h2>
+
+<p>
+    All *finite* linear combinations of vectors of $\mathcal{B} \subseteq \mathcal{V}$. $\rm{span}(\mathcal{B})$ is a subspace of $\mathcal{V}$. If $\rm{span}(\mathcal{B})=\mathcal{V}$ then $\mathcal{V}$ is said to be spanned by $\mathcal{B}$. For example, a vector spans a line and two non-parallel vectors spans $\mathbb{R}^2$.
+</p>
+
+<h2>Linear Dependence and Independence</h2>
+
+<p>
+    A set of vectors $\mathcal{B} \subseteq \mathcal{V}$ is linearly dependent if there exists a set of scalars $c_1,c_2,\cdots,c_k$, not all zeros, such that $c_i\ket{v}*i=\ket{0}$. $\mathcal{B}$ is linearly independent if it is not linearly dependent. (It's funny 😄, but see the example for what is means.)
+</p>
+
+<p>
+    Example: Two non-parallel vectors on a plane are linearly independent, three of more of them on a plane are linearly dependent. Notice that an infinite set of vectors can be linearly independent—you only need to show that there are not any finite linear combination of them such that all the scalars used in the combination are zeros. Think about the set $\{1,x,x^2,\cdots\}$. Though the set contains infinitely many elements, it is linearly independent. Because if $\sum_{i=0}^p c_i x^i=0$ then all $c_i$s are equal to 0. (set $x=0 \implies c_0=0$; take derivatives and show $c_1=0$ and so on. See p. 17 of Johnston (2021)). So we cannot find any linear combination which is equal to 0 with at least one non-zero coefficient, implying that the set is not linearly dependent. So it's linearly independent!
+</p>
+
+<h2>Bases</h2>
+
+<dl>
+    <dt>
+        A basis of a vector space $\mathcal{V}$ is a set of vectors in $\mathcal{V}$ that spans it and is linearly independent. Example, $\begin{smallmatrix} 1 \\ 0 \end{smallmatrix}$ and $\begin{smallmatrix} 0 \\1 \end{smallmatrix}$ spans $\mathbb{C}^2$.
+    </dt>
+
+    <dt>
+        <em>Spanning set need not be unique</em>. $\begin{smallmatrix}1 \\1 \end{smallmatrix}$ and $\begin{smallmatrix}1 \\-1 \end{smallmatrix}$ span $\mathbb{C}^2$, too. Also, $\hat{i}$ and $\hat{j}$ and $45$° anti-clockwise-rotated vectors $(\hat{i}+\hat{j})$ and $(-\hat{i}+\hat{j})$ both spans $\mathbb{R}^2$. $\{I,X,Y,Z\}$ spans $\mathcal{M}_2(\mathbb{C})$.
+    </dt>
+    <dt>
+        The vectors in $\mathcal{B}$ uniquely combine to generate vectors in $\mathcal{V}$. (Of course! $2\hat{i}+3\hat{j}$ is a unique vector in the $\hat{i}, \hat{j}$ basis. For a proof, see p. 21 of Johnston 2021).
+    </dt>
+    <dt>
+        When we represent a vector in some basis, we order the basis set so that the vector can be written in terms of its 'coordinates' $[\ket{v}]_\mathcal{B} \equiv (c_1,\cdots,c_n)$. The <em>coordinates depend on the bases</em>.
+    </dt>
+    <dt>
+        The number of vectors in a basis sets the dimension of the vector space. If $\mathcal{V}$ has a basis with $n$ vectors, then any set of $m>n$ vectors will be linearly dependent and any set of $m < n$ vectors cannot span $\mathcal{V}$. (p. 27, Johnston 2021) </dt>
+    <dt>
+        Constructing a basis can be very non-trivial for infinite-dimensional vector spaces. (More on this on pp. 29–30, Johnston 2021)
+    </dt>
+</dl>
+
+<h2>Linear Operators</h2>
+
+<p>
+    A map between two vector spaces $\mathcal{V}$ and $\mathcal{W}$, $A: \mathcal{V} \rightarrow \mathcal{W}$, that preserves linearity $A (c_1 \ket{v_1} + c_2 \ket{v_2}) = c_1 A \ket{v_1} + c_2 A \ket{v_2}$. Generally, it has a matrix representation given by $A\ket{v_j}=\sum_i A_{ij}\ket{w_i}$. The representation depends on the basis.
+</p>
+
+<h2>Inner Product</h2>
+
+<p>
+    A function $(,):\mathcal{V} \times \mathcal{V} \rightarrow \mathbb{C}$. Some properties:</p>
+
+$$
+\begin{aligned}
+& (\ket{v},\lambda \ket{w}) =\lambda(\ket{v}, \ket{w}) \;(\text{linear in 2nd argument})\\
+& (\lambda\ket{v}, \ket{w}) =\lambda^*(\ket{v}, \ket{w}) \;(\text{conjugate/anti-linear in 1st argument})\\
+& (\ket{v},\ket{w}) =(\ket{w}, \ket{v})^*\\
+& \braket{v}{w}=\begin{bmatrix}v_1^*v_2^*\end{bmatrix}\begin{bmatrix}v_1\\v_2\end{bmatrix}\; \text{in } \mathbb{C}^2
+\end{aligned}
+$$
+
+<h2>Eigenvectors</h2>
+
+Geometrically, an eigenvector stretches/shrinks a vector, but doesn't rotate it: $A\ket{v}=v\ket{v}$. Eigenvalues are computed by solving the characteristic equation $\det\lvert A-\lambda I\rvert = 0$. The characteristic function <em>doesn't depend</em> on the matrix representation of $A$.
+
+<h2>Types of Linear Operators</h2>
+
+<p>
+    First, a definition. The adjoint/Hermitian conjugate of an operator $A$ is the unique operator $A^\dagger$ that satisfies the relation $(\ket{v},A\ket{w})=(A^\dagger \ket{v},\ket{w})$ for any $\ket{v}$ and $\ket{w}$.
+</p>
+
+<p>
+    Some properties of the adjoint operator:
+</p>
+
+$$
+\begin{aligned}
+& A^\dagger = (A^*)^{\rm T}\;\text{for matrix representation}\\
+& AB^\dagger = B^\dagger A^\dagger\\
+& (A^\dagger)^\dagger = A\\
+& \left(\sum_i a_i A_i\right)^\dagger = \left(\sum_i a_i^* A_i^\dagger\right)\; \text{anti-linearity}
+\end{aligned}
+$$
+
+<p>
+    <strong>Normal operator</strong>: $A$ is normal if $A^\dagger A = A A^\dagger$. A normal matrix is Hermitian if and only if it has real eigenvalues. Eigenvectors of an Hermitian operators with distinct eigenvalues are orthogonal.
+</p>
+
+<p>
+    A <strong>self-adjoint/Hermitian</strong> operator satisfies $A^\dagger=A$.
+</p>
+
+<p>
+    A <strong>unitary operator</strong> is a normal operator with $A^\dagger A = A A^\dagger=I$. Since $U$ is normal, it's diagonalizable, too. $U$ preserves inner product $(U\ket{v}, U\ket{w}) = \ket{v}\ket{w}$. $U = \sum_i \ket{w_i}\bra{v_i}$
+</p>
+<p>
+    For a <strong>positive operator</strong>: $(\ket{v},A\ket{v})\geq 0$. If it is positive, then $A$ is called positive definite. $A^\dagger A$ is positive for <em>any operator</em> $A$.
+</p>
+
+<h2>Bra Vectors</h2>
+
+<p>
+    A bra vector is a linear functional $\mathcal{V} \rightarrow \mathbb{C}$; i.e. it takes a ket vector to a complex number: $(\bra{v})\ket{w} = \braket{v}{w}$. Cohen Tannoudji (2020) showed that the space of all such linear functionals forms another vector space $V^*$—known as the dual space of $V$ (pp. 103–108). <em>A bra vector is an element of $V^*$</em>. A bra vector can also be represented as an adjoint vector: $\ket{v}^\dagger \equiv \bra{v}$.
+</p>
+
+<p>
+    Interestingly, for <em>any</em> ket vector in $V$, there exists a bra vector in $V^*$; but for any bra vector, there may not exist a ket vector if the ket belongs to an infinite-dimensional Hilbert space (Cohen Tannoudji 2020 showed a counter-example). For finite-dimensional vector spaces, they are of the same size, and so you'll always get kets corresponding to bras, though.
+</p>
+
+<h3>Recommended</h3>
+<dl>
+    <dt>Sadun (2008) has a neat discussion in section 6.3 titled 'Bras, Kets, and Duality' pp. 152–156</dt>
+    <dt>Cohen Tannoudji (2020) (pp. 103–108) and Mermin (2007) pp. 159–164 for careful definition of bra vectors</dt>
+</dl>
+
+
+<h2>Orthogonal Vectors</h2>
+
+Vectors satisfying $(\ket{v}, \ket{w}) = 0$. Orthonormal vectors are normalized orthogonal vectors ($\|\ket{v}\|=\|\ket{w}\|=1$)
+
+<h2>Orthonormal Basis Set</h2>
+
+<p>
+    A basis set whose elements are orthonormal $\bra{i},\ket{j}=\delta_{ij}$ (like unit vectors). They are complete: $\sum_i \ket{i}\bra{i} = I$.
+</p>
+
+<p>
+    <strong>Gram–Schmidt method</strong> is used to make a linearly independent set of vectors an orthonormal basis set. This is done by normalizing the first vector from the linearly independent set to make it the first basis element, and then progressively making the other vectors orthonormal by removing the projections. Wikipedia has a neat illustration, check it. Also Savov (2020) explained it well. Todo: Add a better synopsis later.
+</p>
+
+<h2>Outer-product and Diagonal Representation</h2>
+
+Any operator can be represented as an outer-product as
+
+$$
+\begin{aligned}
+A = I_W A I_V = \sum_{ij}\ket{w_j}\bra{w_j}A \ket{v_i}\bra{v_i}=\sum_{ij} \bra{w_j}{A}\ket{v_i}\ket{w_j}\bra{v_i}.
+\end{aligned}
+$$
+
+<p>
+    Outer-product representation reduces to diagonal representation (eigendecomposition/orthonormal decomposition) when $\ket{v_i}, \ket{w_j}$ are orthonormal eigenvalues of $A$.
+</p>
+
+<p>
+    Interestingly, if the eigenvectors of $A: \mathcal{V} \rightarrow \mathcal{V}$ have non-degenerate eigenvalues, then they form a basis (eigenbasis) $A = \sum_i \lambda_i \ket{i}\bra{i}$. Example: our favorite Hamiltonian operator and it's energy eigenvalues: $H=\sum_E E\ket{E}\bra{E}$
+</p>
+
+<h2>Simultaneous Diagonalization Theorem</h2>
+
+$[A,B]=0$ iff there exists an orthonormal basis in which $A$ and $B$ are both diagonal. <em>Important for uncertainty relation.</em>
+
+<h2>Projector Operator</h2>
+
+An Hermitian operator that projects to a subspace
+
+<dl>
+    <dt>$P=\sum_{i=1}^k \ket{i}\bra{i}$</dt>
+    <dt>$P^\dagger=P$</dt>
+    <dt>$P^2 =P$</dt>
+    <dt>$P_i P_j = \delta_{ij}P_i$</dt>
+    <dt>Special case: Measurement operator $M=\sum_i\lambda_i P_i$</dt>
+</dl>
+
+<h2>Spectral Decomposition</h2>
+
+$A$ is normal if and only if it's diagonalizable.
+
+<h2>Tensor Products</h2>
+
+<p>
+    If $\mathcal{V}$ and $\mathcal{W}$ are $m$ and $n$ dimensional vector spaces, then $\mathcal{V} \otimes \mathcal{W}$ (read as 'V tensor W') is an $mn$ dimensional vector space.
+</p>
+
+<dl>
+    <dt>
+        If $\ket{i}$ and $\ket{j}$ are orthonormal bases in $\mathcal{V}$ and $\mathcal{W}$ then $\ket{i}\otimes \ket{j}$ is a basis for $\mathcal{V}\otimes \mathcal{W}$.
+    </dt>
+    <dt>
+        $z(\ket{v}\otimes\ket{w})=(z\ket{v})\otimes\ket{w}=\ket{v}\otimes(z\ket{w})$
+    </dt>
+    <dt>
+        $(\ket{v_1}+\ket{v_2})\otimes\ket{w}=\ket{v_1}\otimes\ket{w}+\ket{v_2}\otimes\ket{w}$
+    </dt>
+    <dt>
+        $\ket{v}\otimes(\ket{w_1}+\ket{w_2}) = \ket{v}\otimes\ket{w_1} + \ket{v}\otimes\ket{w_2}$
+    </dt>
+    <dt>
+        <strong>Linear operators on $\mathcal{V}\otimes \mathcal{W}$</strong>: If $A: \mathcal{V} \rightarrow \mathcal{V}'$ and $B: \mathcal{W} \rightarrow \mathcal{W}'$ are two linear operators, then $A\otimes B: \mathcal{V}\otimes \mathcal{W} \rightarrow \mathcal{V}' \otimes \mathcal{W}'$ is defined as
+    </dt>
+</dl>
+
+$$
+\begin{aligned}
+(A\otimes B)(\ket{v}\otimes\ket{w})\equiv A\ket{v} \otimes B\ket{w}.\end{aligned}
+$$
+
+<p>It obeys all properties of linear operators.</p>
+
+<h2>Inner product in a tensor-product space</h2>
+
+$$
+\sum_i a_i \ket{v_i} \otimes \ket{w_i}, \sum_j b_j \ket{v_j'} \otimes \ket{w_j'} = \sum_{ij}a_i^*b_j\bra{v_i}\ket{v_j'} \bra{w_i}\ket{w_j'}
+$$
+
+<h2>Kronecker product as matrix representation for $A\otimes B$</h2>
+
+$$
+\begin{aligned}
+A\otimes B \equiv
+\begin{bmatrix}
+A_{11}B & A_{12}B \\
+A_{21}B & A_{22}B \\
+\end{bmatrix}
+\end{aligned}
+$$
+
+<p>Notation: $\ket{\psi}^{\otimes 2} \equiv \ket{\psi}\otimes \ket{\psi}$</p>
+
+<p>Tensor products of (Hermitian, unitary, positive, projector) operators retain those properties.</p>
+
+<h2>Functions of Operators</h2>
+
+Let $A=\sum_a a\ket{a}\bra{a}$ be a spectral decomposition of the normal operator $A$, then $f(A)=\sum_a f(a) \ket{a}\bra{a}$. For instance,
+
+$$
+\begin{aligned}
+\exp(\theta Z)=\begin{bmatrix}
+\exp(\theta) & 0 \\
+0 & \exp(-\theta) \\
+\end{bmatrix}
+\end{aligned}
+$$
+
+<strong>Important:</strong> $\exp(i\vec{v}\cdot\vec{\sigma})=\cos(\theta)I+i\sin(\theta)\vec{v}\cdot\vec{\sigma}$
+
+<h2>Trace</h2>
+
+<dl>
+    <dt>$\rm{Tr}(A)=\sum_i A_{ii}$</dt>
+    <dt>$\rm{Tr}(AB)=\rm{Tr}(BA)$</dt>
+    <dt>$\rm{Tr}(A+B)=\rm{Tr}(A)+\rm{Tr}(B)$</dt>
+    <dt>$\rm{Tr}(zA)=z\rm{Tr}(A)$</dt>
+    <dt>$\rm{Tr}(A\ket{\psi}\bra{\psi})=\bra{\psi}{A}\ket{\psi}$ <strong>Useful</strong></dt>
+</dl>
+
+<h2>Similarity Transformation</h2>
+
+$A\rightarrow UAU^\dagger$. It preserves trace.
+
+<h2>Polar Decomposition</h2>
+
+...
+
+<h2>Singular Value Decomposition</h2>
+
+...
+
+<h2>Levi-Civita</h2>
+
+In 2D
+
+$$
+\begin{aligned}
+\varepsilon_{ij} =
+\begin{cases}
++1 & \text{if } (i, j) = (1, 2) \\
+-1 & \text{if } (i, j) = (2, 1) \\
+\;\;\,0 & \text{if } i = j
+\end{cases}
+\end{aligned}
+$$
+
+You can think of it as a matrix
+
+$$
+\begin{aligned}
+\begin{pmatrix}
+\varepsilon_{11} & \varepsilon_{12} \\
+\varepsilon_{21} & \varepsilon_{22}
+\end{pmatrix} =
+\begin{pmatrix}
+0 & 1 \\
+-1 & 0
+\end{pmatrix}
+\end{aligned}
+$$
+
+In 3D
+
+$$
+\begin{aligned}
+\varepsilon_{ijk} = \begin{cases}
++1 & \text{if } (i,j,k) \text{ is } (1,2,3), (2,3,1), \text{ or } (3,1,2), \\
+-1 & \text{if } (i,j,k) \text{ is } (3,2,1), (1,3,2), \text{ or } (2,1,3), \\
+\;\;\,0 & \text{if } i = j, \text{ or } j = k, \text{ or } k = i
+\end{cases}
+\end{aligned}
+$$
+
+<h2>Computational Basis</h2>
+
+In $\mathbb{C}^n$ a set of $\ket{j} \equiv \{0,\cdots,1,\cdots,0\}^\mathrm{T}_{n\times 1}$ for $1 \leq j \leq n$ is called a computational or standard basis.
+
+<h2>Identity and Pauli Matrices</h2>
+
+$$
+I=\begin{bmatrix}
+1 & 0 \\
+0 & 1 \\
+\end{bmatrix},
+X=\begin{bmatrix}
+0 & 1 \\
+1 & 0 \\
+\end{bmatrix},
+Y=\begin{bmatrix}
+0 & -i \\
+i & 0 \\
+\end{bmatrix},
+Z=\begin{bmatrix}
+1 & 0 \\
+0 & -1 \\
+\end{bmatrix}
+$$
+
+<h2>Some Useful Relations (incomplete, like other good things in life)</h2>
+
+<dl>
+    <dt>$\frac{1}{\sqrt{2}}(\ket{0}+\ket{1}) = \frac{1}{\sqrt{2}}\begin{bmatrix} 1 \\1 \end{bmatrix} \equiv\ket{+}$</dt>
+    <dt>$\frac{1}{\sqrt{2}}(\ket{0}-\ket{1}) = \frac{1}{\sqrt{2}}\begin{bmatrix}1 \\-1\end{bmatrix} \equiv \ket{-}$</dt>
+    <dt>$\frac{1}{\sqrt{2}}(\ket{0}+i\ket{1}) = \frac{1}{\sqrt{2}}\begin{bmatrix}1 \\i \end{bmatrix} \equiv \ket{y_+}$</dt>
+    <dt>$\frac{1}{\sqrt{2}}(\ket{0}-i\ket{1} = \frac{1}{\sqrt{2}}\begin{bmatrix}1 \\-i\end{bmatrix} \equiv \ket{y_-}$</dt>
+</dl>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Gate</th>
+            <th>Matrix</th>
+            <th>Eigenpair</th>
+            <th>Properties</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Identity ($\sigma_0, I$)</td>
+            <td>$$\begin{bmatrix}1 & 0 \\ 0 & 1 \end{bmatrix}$$</td>
+            <td>$\{1, 1\}, \{\ket{0},\ket{1}\}$</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Pauli X / Bit flip ($\sigma_1, \sigma_x, X$)</td>
+            <td>$$\begin{bmatrix}0 & 1 \\ 1 & 0 \end{bmatrix}$$</td>
+            <td>$\{1,-1\}, \{\ket{+},\ket{-}\}$</td>
+            <td>
+                $$\begin{aligned}
+                & [\sigma_i,\sigma_j]=2i\sum_{l=1}^3\epsilon_{ijk}\sigma_l, \\
+                & \{\sigma_i,\sigma_j\}=0, \sigma_i^2=I
+                \end{aligned}$$
+            </td>
+        </tr>
+        <tr>
+            <td>Pauli Y ($\sigma_2, \sigma_y, Y$)</td>
+            <td>$$\begin{bmatrix}0 & -i \\ i & 0 \end{bmatrix}$$</td>
+            <td>$\{1,-1\}, \{\ket{y_+},\ket{y_-}\}$</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Pauli Z / Phase flip ($\sigma_3, \sigma_z, Z$)</td>
+            <td>$$\begin{bmatrix}1 & 0 \\ 0 & -1 \end{bmatrix}$$</td>
+            <td>$\{1,-1\}, \{\ket{0},\ket{1}\}$</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Phase ($P_\theta$)</td>
+            <td>$$\begin{bmatrix}1 & 0 \\ 0 & e^{i\theta} \end{bmatrix}$$</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>$S$ ($=P_{\pi/2}$)</td>
+            <td>$$\begin{bmatrix}1 & 0 \\ 0 & i \end{bmatrix}$$</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>$T$ ($=P_{\pi/4}$)</td>
+            <td>$$\begin{bmatrix}1 & 0 \\ 0 & \frac{1+i}{\sqrt{2}} \end{bmatrix}$$</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Hadamard ($H$)</td>
+            <td>$$\frac{1}{\sqrt{2}} \begin{bmatrix}1 & 1 \\ 1 & -1 \end{bmatrix}$$</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+
+</html>
