@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Arghya Dutta</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="../assets/favicon_io/site.webmanifest">
+    <link rel="stylesheet" href="../assets/style.css">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"> </script>
+    <script>window.MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] } };</script>
+</head>
+<em><a href="../notebooks.html">Notebooks</a></em>
+
+<h1>Self-avoiding Random Walk (SAW)</h1>
+
+<em>
+    A summary of some results on self-avoiding random walks, compiled after a quick search. Please et me know of any omissions or errors
+</em>
+<p>
+    Let $c_n$ be the number and $R_e$ and $R_g$ be the end-to-end distance and radius of gyration of a $n$-step self-avoiding random walk with vertices at $\omega_0,\omega_2,\cdots,\omega_n$. Then the radius of gyration and end-to-end distance, two relevant measures quantifying the "size" the SAW, are defined as follows:
+</p>
+
+$$
+\begin{align*}
+R_{\rm g}^2 &= \frac{1}{2(n+1)^2} \sum_{i,j =0}^n(\omega_i-\omega_j)^2\\
+R_\mathrm{ e}^2 &= |\omega_n-\omega_0|^2
+\end{align*}
+$$
+
+<p>
+    To get an idea about the size of $n$-step SAWs, one computes their values averaged over all $n$-step SAWs:
+</p>
+
+$$
+\begin{align*}
+\langle R_{\rm g}^2\rangle &= \frac{1}{c_n}\sum_\omega R_\mathrm{ g}^2(\omega)\\
+\langle R_{\rm e}^2\rangle &= \frac{1}{c_n}\sum_\omega R_\mathrm{ e}^2(\omega)
+\end{align*}
+$$
+
+<h2>Numerical Results</h3>
+
+    <p>
+        There are no known method to calculate $c_n$ other than numerical enumeration and asymptotic analysis, as far as I know. The following table summarizes currently known results:
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>$d$</th>
+                <th>$\max(n)$</th>
+                <th>Symmetry</th>
+                <th>Reference</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2</td>
+                <td>71</td>
+                <td>Square</td>
+                <td>Jensen (2004)</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>36</td>
+                <td>Simple cubic</td>
+                <td>Lawler (2011)</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>28</td>
+                <td>BCC</td>
+                <td>Schram (2017)</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>24</td>
+                <td>FCC</td>
+                <td>Schram (2017)</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>
+
+    <h2>Asymptotic results (large $n$)</h2>
+
+    <dl>
+        <dt>
+            Asymptotically, $\langle R_\mathrm{ g}^2\rangle$ and $\langle R_\mathrm{ e}^2\rangle$ are conjectured to behave as $\langle R_\mathrm{ e}^2\rangle \approx BN^{2\nu}$ and $\langle R_\mathrm{ g}^2\rangle \approx CN^{2\nu}$.
+        </dt>
+        <dt>
+            The non-universal amplitudes $B$ and $C$ depend on lattice symmetry and dimension.
+        </dt>
+        <dt>
+            However, the $\nu$ and $\gamma$ only depend on the dimension—they are universal.
+        </dt>
+        <dt>
+            $c_n$ is conjectured to behave as: $c_n \approx A \mu^n n^{\gamma -1}$ where $\mu$ is the connective constant (Sometimes it's called growth constant and $k=\log \mu$ is called connective constant).
+        </dt>
+        <dt>
+            The non-universal amplitude $A$ depends on both the dimension and lattice symmetry.
+        </dt>
+        <dt>
+            The universal critical exponent, also known as the entropic exponent, $\gamma$ only depends on the dimension.
+        </dt>
+    </dl>
+
+    <table>
+        <thead>
+            <tr>
+                <th>$d$</th>
+                <th>$\nu$</th>
+                <th>$\gamma$</th>
+                <th>$c_n\approx$</th>
+                <th>Comment</th>
+                <th>Reference</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2</td>
+                <td>$3/4$</td>
+                <td>$43/32 = 1.343 75$</td>
+                <td>$A \mu^n n^{11/32}$</td>
+                <td>Exact</td>
+                <td>Nienhuis (1982), Nienhuis (1984)</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>0.58759700(40)$\approx 3/5$</td>
+                <td>$1.15695300(95) \approx 7/6$</td>
+                <td>$A \mu^n n^{1/6}$</td>
+                <td>Estimate</td>
+                <td>Schram (2017), Slade (2019) (for summary)</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>$1/2$ with log correction $\langle R_\mathrm{ e}^2\rangle \approx B n(\log n)^{1/4}$ $\langle R_\mathrm{ g}^2\rangle \approx C n(\log n)^{1/4}$</td>
+                <td>1 with log correction</td>
+                <td>$A \mu^n (\log n)^{1/4}$</td>
+                <td>Upper critical dimension</td>
+                <td>Slade (2019)</td>
+            </tr>
+            <tr>
+                <td>$\geq 5$</td>
+                <td>1/2</td>
+                <td>1</td>
+                <td>$A \mu^n$</td>
+                <td>Probably exact</td>
+                <td>Slade (2019), p.4</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <h2>Recommended</h2>
+    <dl>
+    <dt>Clisby, N., & Dünweg, B. (2016). <em>High-precision estimate of the hydrodynamic radius for self-avoiding walks</em>. <a href="https://doi.org/10.1103/PhysRevE.94.052102">Physical Review E, 94(5), 052102</a>. </dt>
+<dt>Jensen, I. (2004). <em>Self-avoiding walks and polygons on the triangular lattice</em>. <a href="https://doi.org/10.1088/1742-5468/2004/10/P10008">Journal of Statistical Mechanics: Theory and Experiment, 2004(10), P10008</a>. </dt>
+<dt>Lawler, G. F. (2011). <em>Scaling limits and the Schramm-Loewner evolution</em>. <a href="https://doi.org/10.1214/11-PS189">Probability Surveys, 8</a>. </dt>
+<dt>Nienhuis, B. (1982). <em>Exact Critical Point and Critical Exponents of $\mathrm{O}(n)$ Models in Two Dimensions</em>. <a href="https://doi.org/10.1103/PhysRevLett.49.1062">Physical Review Letters, 49(15), 1062–1065</a>.</dt>
+<dt>Nienhuis, B. (1984). <em>Critical behavior of two-dimensional spin models and charge asymmetry in the Coulomb gas</em>. <a href="https://doi.org/10.1007/BF01009437">Journal of Statistical Physics, 34(5), 731–761</a>.</dt>
+<dt>Schram, R. D., Barkema, G. T., Bisseling, R. H., & Clisby, N. (2017). <em>Exact enumeration of self-avoiding walks on BCC and FCC lattices</em>. <a href="https://doi.org/10.1088/1742-5468/aa819f">Journal of Statistical Mechanics: Theory and Experiment, 2017(8), 083208</a>. </dt>
+<dt>Slade, G. (2019). <em>Self-avoiding walk, spin systems and renormalization</em>. <a href="https://doi.org/10.1098/rspa.2018.0549">Proceedings of the Royal Society A: Mathematical, Physical and Engineering Sciences, 475(2221), 20180549</a>. </dt>
+
+</dl>
+    </body>
+
+</html>
