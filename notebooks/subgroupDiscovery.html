@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Arghya Dutta</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="../assets/favicon_io/site.webmanifest">
+    <link rel="stylesheet" href="../assets/style.css">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"> </script>
+    <script>window.MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] } };</script>
+</head>
+<em><a href="../notebooks.html">Notebooks</a></em>
+
+<h1>Subgroup Discovery</h1>
+
+<p>
+    Subgroup discovery (SGD) is a local knowledge discovery method. It identifies subsets in a set of elements that 'stands out' with respect to some property of the elements.
+</p>
+<p>
+    What's new in it then from clustering? My current understanding (need to check and update): Compared to global methods like decision tree, regression, or compressed sensing, SGD is a local method meaning it does not attempt to classify all the elements of the parent set into subsets, rather it tries to find subclasses which are of high quality with respect to the desired property.
+</p>
+<p>
+    It has been used to find out subgroup properties that contribute to one of the two crystal structures of 82 octet binaries (Ghiringhelli et al. 2015). SGD predicts two subgroups which contain elements that have either a zinc blend structure or a rock salt structure (Goldsmith et al 2017, Boley et al. 2017). For a review of the SGD, see Atzmueller (2015).
+</p>
+
+<h2>Package</h2>
+<p>
+    New (~2024–25): <a href="https://github.com/flemmerich/pysubgroup">GitHub Repo with Python implementation</a> Also see Lopez-Martinez-Carrasco et al. (2024).  (I tried a Java implementation few years ago; it was useful but a bit clunky.)
+</p>
+
+
+<h2>Algorithm (tentative, need to check)</h2>
+<p>
+    Given: Sample $S \subseteq P$, Target variable $y:P\rightarrow {a, b, c, \cdots}$, and Features $x_j: P\rightarrow X_j$
+</p>
+<p>
+    Define: Propositions $Pi_x = {\pi_1,\cdots, \pi_k}$, Selection language $\mathcal{L}_x = {\sigma(i)=\pi_{j_1}(i)\wedge\cdots\wedge \pi_{j_t}(i)}$
+</p>
+<p>
+    Optimize: $f(Q)=\textrm{cov}(Q)^\gamma \textrm{eff}(Q)_+$ where $Q=\{i \in S: \sigma(i)= \textrm{True}\}$ (extension), $\textrm{cov}(Q)=|Q|/|S|$ (coverage), $\textrm{eff}(Q)= \frac{H_y(S)-H_y(Q)}{H_y(S)}$ (effect), and $H_y(Q) = -\sum_v p_Q(y=v) \log p_Q(y=v)$ (entropy).
+</p>
+
+<h2>Recommended</h2>
+<div class="csl-bib-body" style="line-height: 1.35; ">
+    <div class="csl-entry" style="clear: left; ">
+      <div class="csl-left-margin" style="float: left; padding-right: 0.5em;text-align: right; width: 1em;">(1)</div><div class="csl-right-inline" style="margin: 0 .4em 0 1.5em;">Lopez-Martinez-Carrasco, A.; Juarez, J. M.; Campos, M.; Mora-Caselles, F. Subgroups: A Python Library for Subgroup Discovery. <i>SoftwareX</i> <b>2024</b>, <i>28</i>, 101895. <a href="https://doi.org/10.1016/j.softx.2024.101895">https://doi.org/10.1016/j.softx.2024.101895</a>.</div>
+    </div>
+    
+    <div class="csl-entry" style="clear: left; ">
+      <div class="csl-left-margin" style="float: left; padding-right: 0.5em;text-align: right; width: 1em;">(2)</div><div class="csl-right-inline" style="margin: 0 .4em 0 1.5em;">Ghiringhelli, L. M.; Vybiral, J.; Levchenko, S. V.; Draxl, C.; Scheffler, M. Big Data of Materials Science: Critical Role of the Descriptor. <i>Phys. Rev. Lett.</i> <b>2015</b>, <i>114</i> (10), 105503. <a href="https://doi.org/10.1103/PhysRevLett.114.105503">https://doi.org/10.1103/PhysRevLett.114.105503</a>.</div>
+    </div>
+    
+    <div class="csl-entry" style="clear: left; ">
+      <div class="csl-left-margin" style="float: left; padding-right: 0.5em;text-align: right; width: 1em;">(3)</div><div class="csl-right-inline" style="margin: 0 .4em 0 1.5em;">Atzmueller, M. Subgroup Discovery. <i>WIREs Data Mining and Knowledge Discovery</i> <b>2015</b>, <i>5</i> (1), 35–49. <a href="https://doi.org/10.1002/widm.1144">https://doi.org/10.1002/widm.1144</a>.</div>
+    </div>
+    
+    <div class="csl-entry" style="clear: left; ">
+      <div class="csl-left-margin" style="float: left; padding-right: 0.5em;text-align: right; width: 1em;">(4)</div><div class="csl-right-inline" style="margin: 0 .4em 0 1.5em;">Boley, M.; Goldsmith, B. R.; Ghiringhelli, L. M.; Vreeken, J. Identifying Consistent Statements about Numerical Data with Dispersion-Corrected Subgroup Discovery. <i>Data Min Knowl Disc</i> <b>2017</b>, <i>31</i> (5), 1391–1418. <a href="https://doi.org/10.1007/s10618-017-0520-3">https://doi.org/10.1007/s10618-017-0520-3</a>.</div>
+    </div>
+    
+    <div class="csl-entry" style="clear: left; ">
+      <div class="csl-left-margin" style="float: left; padding-right: 0.5em;text-align: right; width: 1em;">(5)</div><div class="csl-right-inline" style="margin: 0 .4em 0 1.5em;">Goldsmith, B. R.; Boley, M.; Vreeken, J.; Scheffler, M.; Ghiringhelli, L. M. Uncovering Structure-Property Relationships of Materials by Subgroup Discovery. <i>New J. Phys.</i> <b>2017</b>, <i>19</i> (1), 013031. <a href="https://doi.org/10.1088/1367-2630/aa57c2">https://doi.org/10.1088/1367-2630/aa57c2</a>.</div>
+    </div>
+    
+  </div>
+
+</body>
+
+</html>
