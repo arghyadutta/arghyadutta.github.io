@@ -34,10 +34,16 @@ function searchSite() {
 }
 
 // Highlight function to show matches
+
 function highlightMatch(text, query) {
+    // Replace line breaks with <br> to maintain formatting
+    text = text.replace(/\n\n/g, "<br><br>");
+    text = text.replace(/\n/g, "<br>");
+    
     let regex = new RegExp(`(${query})`, "gi");
     return text.replace(regex, `<mark>$1</mark>`);
 }
+
 
 // Load search index when the page loads
 document.addEventListener("DOMContentLoaded", loadSearchIndex);
