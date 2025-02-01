@@ -27,7 +27,7 @@ function searchSite() {
     } else {
         results.forEach(page => {
             let listItem = document.createElement("li");
-            listItem.innerHTML = `<a href="${page.url}">${highlightMatch(page.title, query)}</a> - ${highlightMatch(page.content.substring(0, 100), query)}...`;
+            listItem.innerHTML = `<a href="${page.url}">${highlightMatch(page.title, query)}</a> - ${highlightMatch(page.content.substring(0, 500), query)}...`;
             resultsContainer.appendChild(listItem);
         });
     }
