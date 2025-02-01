@@ -14,7 +14,7 @@ def extract_content(file_path):
 
         # Extract text from <p>, <h2>-<h6>, and <div> tags (ignore script/style)
         paragraphs = soup.find_all(["p", "h2", "h3", "h4", "h5", "h6", "div", "dl", "dt", "dd", "li"])
-        content = " ".join(p.get_text(strip=True) for p in paragraphs)
+        content = "\n".join(p.get_text(strip=True) for p in paragraphs)
 
         return {"title": title, "url": file_path, "content": content[:100000]}
 
