@@ -2,7 +2,11 @@ import os
 import json
 from bs4 import BeautifulSoup
 
+# Directory containing HTML files
 HTML_DIR = "./notebooks"
+
+# Base URL for GitHub Pages
+BASE_URL = "https://arghyadutta.github.io/"
 
 def extract_text_from_tag(tag):
     if tag.name in ["script", "style"]:
@@ -29,7 +33,13 @@ def extract_content(file_path):
         # Debug: Print the content to check for duplicates
         print(f"Extracted content from {file_path}:\n{content}\n")
 
-        return {"title": title, "url": file_path, "content": content[:100000]}
+        # Get the relative path of the file (relative to the repository root)
+        relative_path = os.path.relpath(file_path, start=os.path.dirname(HTML_DIR))
+
+        # Construct the correct GitHub Pages URL
+        url = BASE_URL + relative_path.replace("\\", "/")  # Ensure forward slashes
+
+        return {"title": title, "url": url, "content": content[:100000]}
 
 # Generate search index
 index_data = []
@@ -44,4 +54,4 @@ for filename in unique_files:
 with open("search-index.json", "w", encoding="utf-8") as json_file:
     json.dump(index_data, json_file, indent=2, ensure_ascii=False)
 
-print("Search index updated with <h1> titles!")
+print("Search index updated with correct GitHub Pages URLs!")
