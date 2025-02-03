@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Arghya Dutta</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="../assets/favicon_io/site.webmanifest">
+    <link rel="stylesheet" href="../assets/style.css">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"> </script>
+    <script>window.MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] } };</script>
+</head>
+<em><a href="../notebooks.html">Notebooks</a></em>
+
+<h1>Genetic Algorithm (GA)</h1>
+
+<p>
+    GA is a type of evolutionary computing. It imitates biological evolution to find the `fittest' solution to an optimization problem. So, it is another optimization algorithm like gradient descent or exhaustive search. The fitness is determined by a <em>fitness function</em>.
+</p>
+<p>
+    <b>Procedure:</b> It defines a population of chromosomes, which are candidate solutions to the optimization problem). It then does the following operations on the initial set of parents: selection, crossover, mutation, elicitation. (pp. 2–4, Carr 2014)
+</p>
+
+
+<b>Example:</b> See pp. 6–8 and pp. 11–16, Carr 2014 for examples of discrete and continuous optimization problems, respectively. The solution of the Traveling Salesman problem is on pp. 22–27, Carr 2014.
+
+<p>
+    One practical example is shown in Kim et al. 2021 who designed new polymers starting from a set of parent polymers with the goal of achieving high glass-transition temperature $T_\text{g}$ (to ensure mechanical stability at high temperatures) and high band-gap $E_\text{g}$ (to ensure protection from dielectric breakdown). They proposed 192 new polymers that may have that function based on designing new polymers using GA and then evaluating the $T_\text{g}$ and $E_\text{g}$ of those from pre-trained ML models.
+</p>
+
+<h2>Recommended</h2>
+<dl>
+    <dt>
+        Carr, J. (2014). <em>An Introduction to Genetic Algorithms</em>. <a href="https://www.whitman.edu/Documents/Academics/Mathematics/2014/carrjk.pdf">PDF</a>
+    </dt>
+    <dt>
+        Kim, C., Batra, R., Chen, L., Tran, H., & Ramprasad, R. (2021). <em>Polymer design using genetic algorithm and machine learning</em>. <a href="https://doi.org/10.1016/j.commatsci.2020.110067">Computational Materials Science, 186, 110067</a>. 
+    </dt>
+</dl>
+</body>
+
+</html>
