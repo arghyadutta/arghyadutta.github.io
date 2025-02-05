@@ -60,4 +60,10 @@
         <li><a href="https://openlibrary.org/works/OL15632064W/A_cultural_history_of_physics">A cultural history of physics</a> by Károly Simonyi</li>
         <li><a href="https://openlibrary.org/books/OL30014044M/Hidden_Wonders">Hidden Wonders: The Subtle Dialogue Between Physics and Elegance</a> by E. Guyon, J. Bico, E. Reyssat, and B. Roman</li>
 
+      <ul>
+        <li><a href="https://www.gutenberg.org/">Project Gutenberg</a></li>
+        <li><a href="https://archive.org/">archive.org</a> Two rather obvious entries, but the more I explore them, the more I get pleasantly surprised. They are true treasure troves.</li>
+        <li><a href="https://www.openculture.com/free_ebooks">Open culture's curated list of &quot;800 Free eBooks for iPad, Kindle &amp; Other Devices &quot;</a></li>
+        <li><a href="https://www.fadedpage.com/index.php">Fadedpage</a> Canada's project Gutenberg. Surprisingly rich collection.</li>
+        <li><a href="https://www.read.gov/books/index.html">Classic books (from the U.S. Library of Congress)</a></li>
     </ul>
