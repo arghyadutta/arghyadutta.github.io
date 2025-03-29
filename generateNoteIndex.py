@@ -3,9 +3,9 @@ import glob
 from datetime import datetime
 from bs4 import BeautifulSoup
 
-
 def get_files_sorted_by_mtime(directory, extension=".html"):
     files = glob.glob(os.path.join(directory, f"*{extension}"))
+    files = [f for f in files if os.path.basename(f) != "template.html"]
     files.sort(key=lambda x: os.path.getmtime(x), reverse=True)
     return files
 
