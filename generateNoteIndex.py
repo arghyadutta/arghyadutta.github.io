@@ -50,7 +50,7 @@ def generate_index_html(files, output_file="notebooks.html"):
     <ul>
 """
     for file in files:
-        mtime = datetime.fromtimestamp(os.path.getmtime(file)).strftime("%d %b %Y")
+        mtime = datetime.fromtimestamp(os.path.getmtime(file)).strftime("%B %d, %Y")
         filename = os.path.basename(file)
         title = extract_title_from_html(file)
         html_content += (
