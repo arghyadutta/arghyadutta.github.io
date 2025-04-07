@@ -21,21 +21,7 @@
     <p>When available, I have added links to Open Library, where you can borrow and read quite a few of them for free! Here is a <a href="https://www.youtube.com/watch?v=LP1Wleu3Njs">helpful video</a> by Meghan Adrian on how Open Library works and how you can borrow books there.</p>
     <li><a href="https://openlibrary.org/works/OL1966492W/The_Oxford_Book_of_Modern_Science_Writing">The Oxford Book of Modern Science Writing</a> by Richard Dawkins</li>
 
-    <h3>Addons for Mozilla Firefox</h3>
-    <ol>
-        <li><a href="https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/">uBlock Origin</a> is an essential ad blocker. If you're adventurous, it even lets you disable all javascript on a website and remove ad banners or similar elements.</li>
-        <li><a href="https://addons.mozilla.org/en-US/firefox/addon/privacy-badger17/">Privacy Badger</a> is not an ad-blocker, but it does something <a href="https://privacybadger.org/#What-is-Privacy-Badger">very clever</a>.</li>
-        <li>The <a href="https://www.zotero.org/download/connectors">Zotero connector</a> allows you to add papers to your Zotero Library. It can also automatically redirect journal webpages through an institutional proxy, allowing you to download papers with your institutional credentials.</li>
-        <li><a href="https://addons.mozilla.org/en-US/firefox/addon/return-youtube-dislikes/">Return YouTube dislikes</a> brings back a useful feature.</li>
-        <li><a href="https://addons.mozilla.org/en-US/firefox/addon/single-file/">Single-file</a> is a neat add-on that can download a webpage with everything, including figures, in a <em>single</em> HTML file. Very useful if you want to locally archive, for example, a blog post or a Twitter thread.</li>
-        <li><a href="https://addons.mozilla.org/en-US/firefox/addon/tabliss/">Tabliss</a> sets the new tab page.</li>
-        <li><a href="https://addons.mozilla.org/en-US/firefox/addon/tranquility-1/">Tranquility Reader</a> converts any webpage with an article to a simple one with only the article&#39;s text and core images so that you can read it without 1000 flashy things annoying you.</li>
-        <li><a href="https://addons.mozilla.org/en-US/firefox/addon/feedbroreader/">Feedbro</a> helps to get articles from any website that provides an RSS feed (blogs, journals, magazines…). A good alternative to Feedly.</li>
-        <li><a href="https://addons.mozilla.org/en-US/firefox/addon/gesturefy/">Gesturefy</a> is such a neat add-on! It lets you do several things, like going back to the previous webpage, only with gestures of your mouse.</li>
-        <li>You open a webpage like <a href="http://bactra.org">Cosma Shalizi&#39;s</a> (check it!) and find hundreds of links. Which one is active and which one is dead? <a href="https://addons.mozilla.org/en-US/firefox/addon/link-analyzer/">Link analyzer</a> does that job for you with one click.</li>
-        <li><a href="https://addons.mozilla.org/en-US/firefox/addon/hide-youtube-shorts/">Hide Youtube-Shorts</a> removes YouTube shorts from its homepage, subscriptions page, and search results. It can also hide the &quot;Shorts&quot; tab. Good riddance!</li>
-    </ol>
-
+    
     <h3>Suggestions from other readers</h3>
     <ul>
         <li><a href="https://openlibrary.org/books/OL7070622M/Stages_to_Saturn">Stages to Saturn</a> by Roger E Bilstein</li>
@@ -60,10 +46,4 @@
         <li><a href="https://openlibrary.org/works/OL15632064W/A_cultural_history_of_physics">A cultural history of physics</a> by Károly Simonyi</li>
         <li><a href="https://openlibrary.org/books/OL30014044M/Hidden_Wonders">Hidden Wonders: The Subtle Dialogue Between Physics and Elegance</a> by E. Guyon, J. Bico, E. Reyssat, and B. Roman</li>
 
-      <ul>
-        <li><a href="https://www.gutenberg.org/">Project Gutenberg</a></li>
-        <li><a href="https://archive.org/">archive.org</a> Two rather obvious entries, but the more I explore them, the more I get pleasantly surprised. They are true treasure troves.</li>
-        <li><a href="https://www.openculture.com/free_ebooks">Open culture's curated list of &quot;800 Free eBooks for iPad, Kindle &amp; Other Devices &quot;</a></li>
-        <li><a href="https://www.fadedpage.com/index.php">Fadedpage</a> Canada's project Gutenberg. Surprisingly rich collection.</li>
-        <li><a href="https://www.read.gov/books/index.html">Classic books (from the U.S. Library of Congress)</a></li>
-    </ul>
+      
