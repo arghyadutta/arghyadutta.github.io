@@ -1,29 +1,16 @@
-/* @font-face {
-    font-family: 'MyFont';
-    src: url('./Open_Sans/static/OpenSans-Regular.ttf');
-} */
-
 body {
-    margin: 0 auto;
-    margin-bottom: 100px;
-    margin-top: 40px;
-    width: 93%;
-    max-width: 650px;
-    line-height: 1.5;
-    /* font-family: MyFont; */
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 18px;
-    /* color: #383838; */
+    font-family: 'Georgia', serif;
+    font-size: 20px;
+    background-color: #fff;
+    color: #333;
+    margin: 2em auto;
+    max-width: 720px;
+    padding: 0 1em;
+    line-height: 1.6;
 }
 
 *::selection {
     background: rgba(248, 228, 54, 1);
-}
-
-img {
-    max-width: 100%;
-    object-fit: contain;
-    display: block;
 }
 
 a:link,
@@ -44,20 +31,16 @@ dt {
     display: list-item;
 }
 
-/* dd{
-    color: #780a0a;
-} */
-
 hr {
     border: solid 1px #ccc;
     margin: 1rem 0;
 }
-
 h1 {
-    font-size: 1.4em;
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 0.5em;
     font-weight: 400;
 }
-
 h2 {
     font-size: 1.2em;
     font-weight: 400;
@@ -73,11 +56,12 @@ summary {
 }
 
 blockquote {
-    color: #555;
-    border-left: 4px solid #ccc;
-    margin: 1.5em 10px;
-    padding: 0.5em 10px;
-    background-color: #fdfdfd;
+    border-left: 6px solid #eee;
+    margin: 1.5em 0;
+    padding: 0.5em 1em;
+    color: #666;
+    background-color: #f9f9f9;
+    font-style: italic;
 }
 
 table {

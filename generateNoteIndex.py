@@ -41,24 +41,24 @@ def generate_index_html(files, output_file="notebooks.html"):
     "I sometimes find, and I am sure you know the feeling, that I simply have too many thoughts and memories crammed into my mind. At these times, I use the Pensieve. One simply siphons the excess thoughts from one’s mind, pours them into the basin, and examines them at one’s leisure. It becomes easier to spot patterns and links, you understand, when they are in this form."—Albus Dumbledore (Harry Potter and the Goblet of Fire)
 </blockquote>
 <p>
-    A collection of references, grouped by topics. The amount of content varies widely; some are just placeholders. The plan is to maintain a public, annotated bibliography of what I've read, in part or full, or plan to read. The idea came from Cosma Shalizi's extensive <a href="http://bactra.org/notebooks/">notebooks</a>.
+    A collection of resources and notes maintained by Arghya. The depth of content varies; some are just placeholders. The aim is to maintain a public, annotated bibliography of things I've explored, or plan to explore. The idea came from Cosma Shalizi's extensive <a href="http://bactra.org/notebooks/">notebooks</a>.
 </p>
 
 <p>
     If you've suggestions, please send me an email: arghya.d@srmap.edu.in
 </p>
-    <ul>
+    <dl>
 """
     for file in files:
         mtime = datetime.fromtimestamp(os.path.getmtime(file)).strftime("%B %d, %Y")
         filename = os.path.basename(file)
         title = extract_title_from_html(file)
         html_content += (
-            f'<li><a href="notebooks/{filename}">{title}</a> ({mtime})</li>\n'
+            f'<dt><a href="notebooks/{filename}">{title}</a> ({mtime})</dt>\n'
         )
 
     html_content += """
-    </ul>
+    </dl>
 
     <hr>
 
