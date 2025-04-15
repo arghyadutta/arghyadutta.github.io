@@ -41,7 +41,7 @@ def generate_index_html(files, output_file="notebooks.html"):
     "I sometimes find, and I am sure you know the feeling, that I simply have too many thoughts and memories crammed into my mind. At these times, I use the Pensieve. One simply siphons the excess thoughts from one’s mind, pours them into the basin, and examines them at one’s leisure. It becomes easier to spot patterns and links, you understand, when they are in this form."—Albus Dumbledore (Harry Potter and the Goblet of Fire)
 </blockquote>
 <p>
-    A collection of resources and notes maintained by Arghya. The depth of content varies; some are just placeholders. The aim is to maintain a public, annotated bibliography of things I've explored, or plan to explore. The idea came from Cosma Shalizi's extensive <a href="http://bactra.org/notebooks/">notebooks</a>.
+    A collection of resources and notes. The depth of content varies; some are just placeholders. The aim is to maintain a public, annotated bibliography of things I've explored, or plan to explore. The idea came from Cosma Shalizi's extensive <a href="http://bactra.org/notebooks/">notebooks</a>.
 </p>
 
 <p>
