@@ -47,3 +47,24 @@
         <li><a href="https://openlibrary.org/books/OL30014044M/Hidden_Wonders">Hidden Wonders: The Subtle Dialogue Between Physics and Elegance</a> by E. Guyon, J. Bico, E. Reyssat, and B. Roman</li>
 
       
+/* .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+} */
+/* .box {
+    background-color: #f8f8f8;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+.box h3 {
+    margin: 0;
+}
+.box ul {
+    list-style: none;
+    padding: 0;
+}
+.box ul li {
+    margin: 5px 0;
+} */
