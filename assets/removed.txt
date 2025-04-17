@@ -4,22 +4,15 @@
 <li><a href="https://openlibrary.org/works/OL20022366W/A_singularly_unfeminine_profession">Singularly Unfeminine Profession, A: One Woman’s Journey in Physics</a> by Mary K. Gaillard</li>
 
 <li><a href="https://openlibrary.org/books/OL2716488M/Littlewood's_Miscellany">Littlewood's Miscellany</a> by J. E. Littlewood</li>
-<li><a href="https://www.worldscientific.com/worldscibooks/10.1142/5626#t=aboutBook">Petit Point</a> by de Gennes</li>
 <li><a href="https://openlibrary.org/works/OL8254481W/Enrico_Fermi">Enrico Fermi Physicist</a> by Emilio Segre</li>
 <li><a href="https://openlibrary.org/works/OL1439437W/Madame_Curie?edition=key%3A/books/OL6040407M">Madame Curie: A Biography</a> By Eve Curie</li>
-<li><a href="https://openlibrary.org/works/OL2776841W/I_want_to_be_a_mathematician?edition=key%3A/books/OL18288933M">I Want to be a Mathematician</a> by Paul Halmos</li>
+
 <li><a href="https://openlibrary.org/works/OL1857638W/The_Man_Who_Loved_Only_Numbers?edition=key%3A/books/OL354306M">The Man Who Loved Only Numbers</a> by Paul Hoffman</li>
 <li><a href="https://www.youtube.com/playlist?list=PLPeStI124dee1ByfcDzRvPxKDNb0GQjmo">Philosophy of the humanities</a> by Victor Gijsbers.</li>
 
-<li><a href="https://openlibrary.org/works/OL2471133W/Aristotle_to_zoos">Aristotle to Zoos: A Philosophical Dictionary of Biology</a> by P. B. Medawar and J. S. Medawar</li>
-        <li><a href="https://global.oup.com/academic/product/the-way-of-the-cell-9780195163384">The Way of the Cell: Molecules, Organisms, and the Order of Life</a> by Franklin M. Harold</li>
           <li><a href="https://openlibrary.org/works/OL515051W/On_the_origin_of_species_by_means_of_natural_selection">On the origin of species by means of natural selection</a> by Charles Darwin</li>
 
-              <h2 id="books">Well-written books on science and scientists</h2> (<a href="#top">Back to Top</a>)
-    <p>A list of well-written books. I have also added some other books that I've not read but was suggested to me by others, on Twitter.</p>
-
-    <p>When available, I have added links to Open Library, where you can borrow and read quite a few of them for free! Here is a <a href="https://www.youtube.com/watch?v=LP1Wleu3Njs">helpful video</a> by Meghan Adrian on how Open Library works and how you can borrow books there.</p>
-    <li><a href="https://openlibrary.org/works/OL1966492W/The_Oxford_Book_of_Modern_Science_Writing">The Oxford Book of Modern Science Writing</a> by Richard Dawkins</li>
+    
 
     
     <h3>Suggestions from other readers</h3>
