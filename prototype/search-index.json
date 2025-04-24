@@ -1,77 +1,77 @@
 [
   {
-    "title": "WWP1",
-    "url": "protein_pages/HECT1_Q9H0M0.html",
-    "content": "Database Confidence: 0.875 Q9H0M0 InterPro entry Protein length: 922 UniProt ID for WWP1: Q9H0M0"
-  },
-  {
-    "title": "HOIL1",
-    "url": "protein_pages/RBR_Q9BYM8.html",
-    "content": "Database Confidence: 1.0 Q9BYM8 InterPro entry UniProt ID for HOIL1: Q9BYM8 Protein length: 510"
-  },
-  {
-    "title": "TRI29",
-    "url": "protein_pages/RING1_Q14134.html",
-    "content": "UniProt ID for TRI29: Q14134 Protein length: 588 InterPro entry Q14134 Database Confidence: 0.125"
-  },
-  {
-    "title": "HECD3",
-    "url": "protein_pages/HECT1_Q5T447.html",
-    "content": "Database Confidence: 0.875 UniProt ID for HECD3: Q5T447 Q5T447 InterPro entry Protein length: 861"
-  },
-  {
-    "title": "MEX3B",
-    "url": "protein_pages/RING3_Q6ZN04.html",
-    "content": "Protein length: 569 Q6ZN04 InterPro entry Database Confidence: 0.75 UniProt ID for MEX3B: Q6ZN04"
-  },
-  {
     "title": "HERC6",
-    "url": "protein_pages/HECT1_Q8IVU3.html",
-    "content": "Q8IVU3 Protein length: 1022 InterPro entry Database Confidence: 0.625 UniProt ID for HERC6: Q8IVU3"
-  },
-  {
-    "title": "WWP2",
-    "url": "protein_pages/HECT1_O00308.html",
-    "content": "Database Confidence: 0.875 UniProt ID for WWP2: O00308 Protein length: 870 O00308 InterPro entry"
+    "url": "protein_pages/Q8IVU3.html",
+    "content": " Protein–Substrate Interaction Network B Known Substrates C Protein length: 1022 InterPro entry UniProt ID for HERC6: Q8IVU3 Q8IVU3 A Database Confidence: 0.625"
   },
   {
     "title": "NEDD4",
-    "url": "protein_pages/HECT1_P46934.html",
-    "content": "Database Confidence: 0.875 UniProt ID for NEDD4: P46934 InterPro entry P46934 Protein length: 1319"
+    "url": "protein_pages/P46934.html",
+    "content": " Protein–Substrate Interaction Network D P46934 Known Substrates F E InterPro entry Protein length: 1319 Database Confidence: 0.875 UniProt ID for NEDD4: P46934"
   },
   {
-    "title": "MARHB",
-    "url": "protein_pages/RING2_A6NNE9.html",
-    "content": "Database Confidence: 0.875 A6NNE9 Protein length: 402 InterPro entry UniProt ID for MARHB: A6NNE9"
-  },
-  {
-    "title": "GOLI",
-    "url": "protein_pages/RING3_Q86XS8.html",
-    "content": "Database Confidence: 0.875 UniProt ID for GOLI: Q86XS8 Q86XS8 InterPro entry Protein length: 419"
-  },
-  {
-    "title": "MARH5",
-    "url": "protein_pages/RING2_Q9NX47.html",
-    "content": "Q9NX47 Database Confidence: 1.0 Protein length: 278 InterPro entry UniProt ID for MARH5: Q9NX47"
-  },
-  {
-    "title": "UBE3A",
-    "url": "protein_pages/HECT1_Q05086.html",
-    "content": "Database Confidence: 0.875 UniProt ID for UBE3A: Q05086 Protein length: 875 InterPro entry Q05086"
-  },
-  {
-    "title": "MEX3D",
-    "url": "protein_pages/RING3_Q86XN8.html",
-    "content": "Protein length: 651 InterPro entry Database Confidence: 0.625 UniProt ID for MEX3D: Q86XN8 Q86XN8"
-  },
-  {
-    "title": "BIRC8",
-    "url": "protein_pages/RING3_Q96P09.html",
-    "content": "InterPro entry Database Confidence: 0.375 Protein length: 236 Q96P09 UniProt ID for BIRC8: Q96P09"
+    "title": "WWP2",
+    "url": "protein_pages/O00308.html",
+    "content": " Protein length: 870 O00308 D Protein–Substrate Interaction Network Known Substrates F UniProt ID for WWP2: O00308 E InterPro entry Database Confidence: 0.875"
   },
   {
     "title": "WSDU1",
-    "url": "protein_pages/RING1_Q8N9V3.html",
-    "content": "Q8N9V3 InterPro entry UniProt ID for WSDU1: Q8N9V3 Database Confidence: 0.625 Protein length: 476"
+    "url": "protein_pages/Q8N9V3.html",
+    "content": " Protein–Substrate Interaction Network B Known Substrates UniProt ID for WSDU1: Q8N9V3 C Q8N9V3 InterPro entry A Protein length: 476 Database Confidence: 0.625"
+  },
+  {
+    "title": "MEX3B",
+    "url": "protein_pages/Q6ZN04.html",
+    "content": " Database Confidence: 0.75 D Q6ZN04 Protein length: 569 Known Substrates F UniProt ID for MEX3B: Q6ZN04 E InterPro entry Protein–Substrate Interaction Network"
+  },
+  {
+    "title": "MARH5",
+    "url": "protein_pages/Q9NX47.html",
+    "content": " Q9NX47 D UniProt ID for MARH5: Q9NX47 Known Substrates F E InterPro entry Protein length: 278 Protein–Substrate Interaction Network Database Confidence: 1.0"
+  },
+  {
+    "title": "UBE3A",
+    "url": "protein_pages/Q05086.html",
+    "content": " Protein–Substrate Interaction Network Protein length: 875 UniProt ID for UBE3A: Q05086 B Known Substrates C InterPro entry A Database Confidence: 0.875 Q05086"
+  },
+  {
+    "title": "MARHB",
+    "url": "protein_pages/A6NNE9.html",
+    "content": " Protein–Substrate Interaction Network B Known Substrates Protein length: 402 C A6NNE9 InterPro entry A Database Confidence: 0.875 UniProt ID for MARHB: A6NNE9"
+  },
+  {
+    "title": "TRI29",
+    "url": "protein_pages/Q14134.html",
+    "content": " Q14134 Protein length: 588 D Known Substrates F Database Confidence: 0.125 InterPro entry E Protein–Substrate Interaction Network UniProt ID for TRI29: Q14134"
+  },
+  {
+    "title": "WWP1",
+    "url": "protein_pages/Q9H0M0.html",
+    "content": " UniProt ID for WWP1: Q9H0M0 B Protein–Substrate Interaction Network Known Substrates Protein length: 922 C InterPro entry A Database Confidence: 0.875 Q9H0M0"
+  },
+  {
+    "title": "GOLI",
+    "url": "protein_pages/Q86XS8.html",
+    "content": " Protein–Substrate Interaction Network B UniProt ID for GOLI: Q86XS8 Known Substrates Q86XS8 C InterPro entry A Protein length: 419 Database Confidence: 0.875"
+  },
+  {
+    "title": "HECD3",
+    "url": "protein_pages/Q5T447.html",
+    "content": " Protein–Substrate Interaction Network B Known Substrates C InterPro entry Protein length: 861 A UniProt ID for HECD3: Q5T447 Database Confidence: 0.875 Q5T447"
+  },
+  {
+    "title": "HOIL1",
+    "url": "protein_pages/Q9BYM8.html",
+    "content": " Protein length: 510 D Q9BYM8 Known Substrates UniProt ID for HOIL1: Q9BYM8 F E InterPro entry Protein–Substrate Interaction Network Database Confidence: 1.0"
+  },
+  {
+    "title": "BIRC8",
+    "url": "protein_pages/Q96P09.html",
+    "content": " Protein–Substrate Interaction Network B Known Substrates Protein length: 236 C UniProt ID for BIRC8: Q96P09 InterPro entry Database Confidence: 0.375 Q96P09 A"
+  },
+  {
+    "title": "MEX3D",
+    "url": "protein_pages/Q86XN8.html",
+    "content": " Protein–Substrate Interaction Network B Q86XN8 Protein length: 651 Known Substrates C InterPro entry UniProt ID for MEX3D: Q86XN8 A Database Confidence: 0.625"
   }
 ]

@@ -36,7 +36,7 @@ for group, subdf in grouped:
     for _, row in subdf.iterrows():
         uniprot_id = row['upt_acc']
         name = row['upt_id'].replace("_HUMAN", "")
-        filename = f"{group}_{uniprot_id}.html"
+        filename = f"{uniprot_id}.html"
         filepath = os.path.join(protein_dir, filename)
         if os.path.exists(filepath):  # Only link if file was created
             html += f'<li><a href="{filepath}">{name} ({uniprot_id})</a></li>\n'
