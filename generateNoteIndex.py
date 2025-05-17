@@ -42,12 +42,10 @@ def generate_index_html(files, output_file="notebooks.html"):
     —Albus Dumbledore (Harry Potter and the Goblet of Fire)
 </blockquote>
 <p>
-    A collection of resources and notes. The depth of content varies; some are just placeholders. The aim is to maintain a public, annotated bibliography of things I've explored, or plan to explore. The idea came from Cosma Shalizi's extensive <a href="http://bactra.org/notebooks/">notebooks</a>.
+    A collection of resources and notes. The depth of content varies; some are just placeholders. The aim is to maintain a public, annotated bibliography of things I've explored, or plan to explore. The idea came from Cosma Shalizi's extensive <a href="http://bactra.org/notebooks/">notebooks</a>. If you've suggestions, please send me an email: arghya.d@srmap.edu.in
 </p>
 
-<p>
-    If you've suggestions, please send me an email: arghya.d@srmap.edu.in
-</p>
+<hr>
 <p>
     A basic search function, with coding almost entirely done using LLMs.
 </p>
@@ -56,7 +54,7 @@ def generate_index_html(files, output_file="notebooks.html"):
 <ul id="searchResults"></ul>
 
 <script src="search.js"></script>
-
+<hr>
     <dl>
 """
     for file in files:
