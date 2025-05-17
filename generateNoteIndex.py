@@ -48,6 +48,15 @@ def generate_index_html(files, output_file="notebooks.html"):
 <p>
     If you've suggestions, please send me an email: arghya.d@srmap.edu.in
 </p>
+<p>
+    A basic search function, with coding almost entirely done using LLMs.
+</p>
+
+<input type="text" id="searchBox" onkeyup="searchSite()" placeholder="Search">
+<ul id="searchResults"></ul>
+
+<script src="search.js"></script>
+
     <dl>
 """
     for file in files:
@@ -63,16 +72,6 @@ def generate_index_html(files, output_file="notebooks.html"):
 
     <hr>
 
-<p>
-    Basic search function, with coding almost entirely done using LLMs. It looks bad, but seems to work.
-</p>
-
-<input type="text" id="searchBox" onkeyup="searchSite()" placeholder="Search">
-<ul id="searchResults"></ul>
-
-<script src="search.js"></script>
-
-<hr>
 </body>
 </html>
 """
