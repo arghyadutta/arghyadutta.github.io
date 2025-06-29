@@ -33,8 +33,6 @@ def generate_index_html(files, output_file="notebooks.html"):
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon_io/favicon-16x16.png">
     <link rel="manifest" href="../assets/favicon_io/site.webmanifest">
     <link rel="stylesheet" href="../assets/style.css">
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"> </script>
-    <script>window.MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] } };</script>
 </head>
 <body>
 <em><a href="../index.html">Homepage</a></em>
