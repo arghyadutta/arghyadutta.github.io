@@ -42,7 +42,7 @@ def generate_index_html(files, output_file="notebooks.html"):
 </blockquote>
 
 <p>
-    A collection of resources and notes. The idea came from <a href="http://bactra.org/notebooks/">Cosma Shalizi's notebooks</a>. The depths of contents vary; some are just placeholders. The aim is to maintain notes and annotated bibliographies on ideas I have explored or plan to explore. Be warned though: I  generally write these notes <em>for myself</em> while <em>exploring</em> a topic and they may contain misunderstandings, or even errors!  If you spot one, please send me an email: arghya.d@srmap.edu.in
+    A collection of notes and annotated bibliographies, inspired by <a href="http://bactra.org/notebooks/">Cosma Shalizi's notebooks</a>. Some entries are detailed, others just placeholders. The aim is to keep track of ideas I’ve explored or hope to explore and online resources that I've found useful. These notes are mostly for my own use, so they may (will) contain gaps or mistakes. If you spot one, please let me know: arghya.d@srmap.edu.in
 </p>
 
     <dl>
