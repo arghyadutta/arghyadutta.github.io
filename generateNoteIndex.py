@@ -3,6 +3,7 @@ import glob
 from datetime import datetime
 from bs4 import BeautifulSoup
 
+
 def get_files_sorted_by_mtime(directory, extension=".html"):
     files = glob.glob(os.path.join(directory, f"*{extension}"))
     files = [f for f in files if os.path.basename(f) != "template.html"]
@@ -42,8 +43,14 @@ def generate_index_html(files, output_file="notebooks.html"):
 </blockquote>
 
 <p>
-    A collection of notes and annotated bibliographies, inspired by <a href="http://bactra.org/notebooks/">Cosma Shalizi's notebooks</a>. Some entries are detailed, others just placeholders. The aim is to keep track of ideas I’ve explored or hope to explore and online resources that I've found useful. These notes are mostly for my own use, so they may (will) contain gaps or mistakes. If you spot one, please let me know: arghya.d@srmap.edu.in
+    A collection of notes and annotated bibliographies, inspired by <a href="http://bactra.org/notebooks/">Cosma Shalizi's notebooks</a>. Some entries are detailed, others just placeholders. The aim is to keep track of ideas I’ve explored or hope to explore and online resources that I've found useful. As these notes are mostly for my own use, they contain gaps (and few mistakes). If you spot one, please let me know: arghya.d@srmap.edu.in
 </p>
+
+<input type="text" id="searchBox" onkeyup="searchSite()" placeholder="Search">
+<ul id="searchResults"></ul>
+
+<script src="search.js"></script>
+
 
     <dl>
 """
@@ -57,14 +64,6 @@ def generate_index_html(files, output_file="notebooks.html"):
 
     html_content += """
     </dl>
-
-    <hr>
-<input type="text" id="searchBox" onkeyup="searchSite()" placeholder="Search">
-<ul id="searchResults"></ul>
-
-<script src="search.js"></script>
-<hr>
-
 </body>
 </html>
 """
