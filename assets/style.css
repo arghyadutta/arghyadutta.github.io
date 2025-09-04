@@ -93,7 +93,7 @@ hr {
 }
 
 summary {
-    font-weight: bold;
+    /* font-weight: bold; */
     color: var(--color-accent);
     cursor: pointer;
 }
