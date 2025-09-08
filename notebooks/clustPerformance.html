@@ -7517,17 +7517,38 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<head>
+<title>Arghya Dutta</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<link href="../assets/favicon_io/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="../assets/favicon_io/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="../assets/favicon_io/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="../assets/favicon_io/site.webmanifest" rel="manifest"/>
+</head>
+<p><em><a href="../notebooks.html">Notebooks</a></em></p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9e3f0c89">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h1>Evaluating Clustering Performance</h1>
-<p><mark>NOTE: Most of the following is adapted—sometimes copied!—from the <a href="https://scikit-learn.org/stable/modules/clustering.html">Scikit Learn's excellent documentation on clustering</a>. This notebook is a compilation of sources that I found relevant while working on a project, along with some of my own thoughts.</mark></p>
-<p>Compared to supervised classification algorithms, evaluating quality of two partitions of the same data is harder. This is often done in two ways:</p>
+<p><mark>NOTE: Most of this notebook's content is adapted—often copied!—from the <a href="https://scikit-learn.org/stable/modules/clustering.html">Scikit Learn's excellent documentation on clustering</a>. This is a compilation of definitions/code-snippets that I found useful while working on a project, along with some of my own thoughts.</mark></p>
+<p>Evaluation of quality of clusters is often done in two ways:</p>
 <ul>
-<li>comparing how well the predicted cluster matches with the ground truth and</li>
-<li>checking if the generated clusters are consistent.</li>
-</ul>
-<p>The second approach is useful in case there are no available ground truths.</p>
-<ul>
-<li><strong>Doesn't Need a Ground Truth</strong>: Silhouette Coefficient, Calinski–Harabasz Index, Davies–Bouldin Index</li>
-<li><strong>Needs Ground Truth</strong>: Homogeneity Score, Completeness Score, V Measure</li>
+<li><p>comparing how well the predicted clusters compare with the ground truth and</p>
+</li>
+<li><p>checking if the generated clusters are consistent.</p>
+</li>
+<li><p>The second approach is useful if no ground truths are available. There are several coefficients that quantify the quality of clustering.</p>
+</li>
+<li><p>Some that do not need a ground truth are Silhouette coefficient, Calinski–Harabasz index, and Davies–Bouldin Index. Homogeneity Score, Completeness Score, and V Measure need a ground truth.</p>
+</li>
 </ul>
 </div>
 </div>
@@ -7539,8 +7560,8 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Silhouette coefficient for a single sample is
-$$
+<h2 id="Silhouette-coefficient">Silhouette coefficient<a class="anchor-link" href="#Silhouette-coefficient">¶</a></h2><p>For a single sample it is</p>
+<p>$$
 s = \frac{b - a}{\max(a, b)}.
 $$</p>
 <ul>
@@ -7557,7 +7578,7 @@ $$</p>
 <p><strong>Important</strong>: Scikit returns the mean of all Silhouette coefficients of the samples.</p>
 <p>Scikit mentions a drawback:</p>
 <blockquote>
-<p>The Silhouette Coefficient is generally higher for convex clusters than other concepts of clusters, such as density based clusters like those obtained through DBSCAN. [ws:scikit-clustering]</p>
+<p>The Silhouette Coefficient is generally higher for convex clusters than other concepts of clusters, such as density based clusters like those obtained through DBSCAN.</p>
 </blockquote>
 </div>
 </div>
@@ -7569,7 +7590,7 @@ $$</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Calinski-Harabasz-Index">Calinski Harabasz Index<a class="anchor-link" href="#Calinski-Harabasz-Index">¶</a></h3><p>Calinski–Harabasz index (CHI) is the ratio of the sum of between-clusters-dispersion for all clusters and sum of inter-cluster dispersion for all clusters. Better-defined clusters have higher CHI value.</p>
+<h3 id="Calinski-Harabasz-Index">Calinski Harabasz Index<a class="anchor-link" href="#Calinski-Harabasz-Index">¶</a></h3><p>Calinski–Harabasz index (CHI) is the ratio of the sum of between-clusters dispersion for all clusters and sum of inter-cluster dispersion for all clusters. Better-defined clusters have higher CHI value.</p>
 </div>
 </div>
 </div>
@@ -7581,7 +7602,7 @@ $$</p>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="Davies-Bouldin-Index">Davies-Bouldin Index<a class="anchor-link" href="#Davies-Bouldin-Index">¶</a></h3><p>Surprisingly, DB <em>values closer to zero indicate a better partition</em>, unlike Calinski-Harabasz index and Silhouette coefficient.</p>
-<p>For CHI and DBI formulas, check the referenced scikit doc page. I don't need to explore them in detail for now.</p>
+<p>For CHI and DBI formulas, check the referenced scikit doc page.</p>
 </div>
 </div>
 </div>
@@ -7633,7 +7654,10 @@ $$</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="V-Measure">V-Measure<a class="anchor-link" href="#V-Measure">¶</a></h3><p>It's the harmonic mean of the homogeneity score and completeness scores: $v = 2 \cdot \frac{h \cdot c}{h + c}$. It's implemented in scikit as $v = \frac{(1 + \beta) \times \text{homogeneity} \times \text{completeness}}{(\beta \times \text{homogeneity} + \text{completeness})}$</p>
+<h3 id="V-Measure">V-Measure<a class="anchor-link" href="#V-Measure">¶</a></h3><ul>
+<li>The harmonic mean of the homogeneity score and completeness scores: $v = 2 \cdot \frac{h \cdot c}{h + c}$.</li>
+<li>It's implemented in scikit as $v = \frac{(1 + \beta) \times \text{homogeneity} \times \text{completeness}}{(\beta \times \text{homogeneity} + \text{completeness})}$</li>
+</ul>
 </div>
 </div>
 </div>
@@ -7642,7 +7666,7 @@ $$</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">metrics</span>
@@ -7679,7 +7703,7 @@ $$</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Mutual-information-based-similarity-score">Mutual-information-based similarity score<a class="anchor-link" href="#Mutual-information-based-similarity-score">¶</a></h3><p>Let's say, we have 2 sets of labels, $U$ and $V$ for $N$ objects. If $P(i)=|U_i|/N$ and $P'(j)=|V_i|/N$ are the probabilities that a randomly-picked object from $U$ ($V$) falls into class $U_i$ ($V_j$), then the entropies and the mutual information between $U$ and $V$ are computed as
+<h3 id="Mutual-information-based-similarity-score">Mutual-information-based similarity score<a class="anchor-link" href="#Mutual-information-based-similarity-score">¶</a></h3><p>Let's say, we have 2 sets of labels, $U$ and $V$, for $N$ objects. If $P(i)=|U_i|/N$ and $P'(j)=|V_i|/N$ are the probabilities that a randomly-picked object from $U$ ($V$) falls into class $U_i$ ($V_j$), then the entropies and the mutual information between $U$ and $V$ are computed as
 $$
 \begin{aligned}
 H(U) &amp;= - \sum_{i=1}^{|U|}P(i)\log(P(i))\\
@@ -7699,11 +7723,9 @@ $$</p>
 </ul>
 </li>
 </ul>
-<p>Why mutual information–based scores don't penalized higher number of clusters? #question</p>
 <p>References:</p>
 <ul>
-<li>C. D. Manning, P. Raghavan, H. Schütze. Introduction to Information Retrieval; Cambridge University Press: New York, 2008. pp. 356–359 (Good discussion. Have some stuff from the book in my talks on E3 ligases)</li>
-<li>[ws:scikit-clustering]</li>
+<li>C. D. Manning, P. Raghavan, H. Schütze. Introduction to Information Retrieval; Cambridge University Press: New York, 2008. pp. 356–359 (Good discussion.)</li>
 </ul>
 </div>
 </div>
@@ -7719,19 +7741,30 @@ $$</p>
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f1bb9108">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><img alt="Pair Confusion matrix" src="../assets/images/pair-confusion.png"/></p>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=a38fa494">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics.cluster</span> <span class="kn">import</span> <span class="n">pair_confusion_matrix</span>
 <span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">metrics</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="n">C</span> <span class="o">=</span> <span class="n">pair_confusion_matrix</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
-<span class="n">C</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>
 <span class="n">TN</span> <span class="o">=</span> <span class="n">C</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
 <span class="n">FP</span> <span class="o">=</span> <span class="n">C</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
 <span class="n">FN</span> <span class="o">=</span> <span class="n">C</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
@@ -7745,23 +7778,13 @@ $$</p>
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[2]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>array([[8, 0],
-       [2, 2]])</pre>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>[[8 0]
+ [2 2]]
+</pre>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f1bb9108">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="Pair Confusion matrix" src="../assets/images/pair-confusion.png"/></p>
 </div>
 </div>
 </div>
@@ -7783,7 +7806,7 @@ $$FMI = \frac{TP}{\sqrt{(TP + FP) (TP + FN)}}.$$</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">FMI</span> <span class="o">=</span> <span class="n">TP</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">TP</span> <span class="o">+</span> <span class="n">FP</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">TP</span> <span class="o">+</span> <span class="n">FN</span><span class="p">))</span>
@@ -7834,7 +7857,13 @@ $$FMI = \frac{TP}{\sqrt{(TP + FP) (TP + FN)}}.$$</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Element-centric-similarity-and-issues-with-FMI-and-NMI">Element-centric similarity and issues with FMI and NMI<a class="anchor-link" href="#Element-centric-similarity-and-issues-with-FMI-and-NMI">¶</a></h3><p>Gates et al. raise objections against using Fowlkes Mallows Index and NMI, specifically NMI [gates2019clusim,gates2019element]. One figure from their paper, reproduced below, summarizes the problem well. They also have a with their proposed index. Below you can find an example code that reproduces the numbers in the schematic.</p>
+<h3 id="Element-centric-similarity-and-issues-with-FMI-and-NMI">Element-centric similarity and issues with FMI and NMI<a class="anchor-link" href="#Element-centric-similarity-and-issues-with-FMI-and-NMI">¶</a></h3><p>Gates et al. raise objections against using Fowlkes–Mallows Index and NMI, specifically NMI; they proposed a new one.</p>
+<p>References:</p>
+<ul>
+<li>A. J. Gates et al. Element-Centric Clustering Comparison Unifies Overlaps and Hierarchy. Sci Rep 2019, 9 (1), 8574. <a href="https://doi.org/10.1038/s41598-019-44892-y">DOI</a>.</li>
+<li>A. J. Gates, Y.-Y. Ahn. CluSim: A Python Package for Calculating Clustering Similarity. Journal of Open Source Software 2019, 4 (35), 1264. <a href="https://doi.org/10.21105/joss.01264">DOI</a>.</li>
+<li><a href="https://github.com/Hoosier-Clusters/clusim">https://github.com/Hoosier-Clusters/clusim</a> of Gates et al. with their package</li>
+</ul>
 </div>
 </div>
 </div>
@@ -7843,7 +7872,7 @@ $$FMI = \frac{TP}{\sqrt{(TP + FP) (TP + FN)}}.$$</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">clusim.clustering</span> <span class="kn">import</span> <span class="n">Clustering</span>
@@ -7908,7 +7937,18 @@ FMI = 0.0, NMI = 0.6666666666666665, elem-cent = 0.33333333333333326
     rogers_tanimoto_index       0.5319148936170213
           southwood_index      0.45454545454545453
       pearson_correlation      0.00102880658436214
-         corrected_chance      0.17064051552033183
+         corrected_chance      0.17107186225250312
+      sample_expected_sim      0.10526315789473684
+                      nmi       0.5451600159416435
+                       mi       0.8233232815796736
+                   adj_mi       0.3410389011275906
+                      rmi       0.1464053299155769
+                       vi       1.3738364418444755
+       geometric_accuracy       0.7777777777777778
+          overlap_quality                     -0.0
+                     onmi       0.6303315236619905
+              omega_index      0.26666666666666655
+         corrected_chance      0.17107186225250312
       sample_expected_sim      0.10526315789473684
                       nmi       0.5451600159416435
                        mi       0.8233232815796736
@@ -7921,23 +7961,6 @@ FMI = 0.0, NMI = 0.6666666666666665, elem-cent = 0.33333333333333326
               omega_index      0.26666666666666655
 </pre>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a55ec533">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>The code above reproduces the numbers in the schematic below, using their python package. Their package can compute many indices, which is useful. Of course, the common scores (FMI, NMI etc.) matches if you compute with scikit-learn.</p>
-<p>References:</p>
-<ul>
-<li>[gates2019element] A. J. Gates et al. Element-Centric Clustering Comparison Unifies Overlaps and Hierarchy. Sci Rep 2019, 9 (1), 8574. <a href="https://doi.org/10.1038/s41598-019-44892-y">DOI</a>.</li>
-<li>[gates2019clusim] A. J. Gates, Y.-Y. Ahn. CluSim: A Python Package for Calculating Clustering Similarity. Journal of Open Source Software 2019, 4 (35), 1264. <a href="https://doi.org/10.21105/joss.01264">DOI</a>.</li>
-<li><a href="https://github.com/Hoosier-Clusters/clusim">https://github.com/Hoosier-Clusters/clusim</a> of Gates et al. with their package</li>
-</ul>
 </div>
 </div>
 </div>
