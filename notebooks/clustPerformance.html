@@ -7538,18 +7538,14 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h1>Evaluating Clustering Performance</h1>
-<p><mark>NOTE: Most of this notebook's content is adapted—often copied!—from the <a href="https://scikit-learn.org/stable/modules/clustering.html">Scikit Learn's excellent documentation on clustering</a>. This is a compilation of definitions/code-snippets that I found useful while working on a project, along with some of my own thoughts.</mark></p>
+<p><mark>NOTE: Most of this notebook's content is adapted—often copied!—from scikit-learn's excellent <a href="https://scikit-learn.org/stable/modules/clustering.html">documentation on clustering</a>. This is a compilation of definitions and code-snippets that I found useful while working on a project, along with some of my own thoughts.</mark></p>
 <p>Evaluation of quality of clusters is often done in two ways:</p>
 <ul>
-<li><p>comparing how well the predicted clusters compare with the ground truth and</p>
-</li>
-<li><p>checking if the generated clusters are consistent.</p>
-</li>
-<li><p>The second approach is useful if no ground truths are available. There are several coefficients that quantify the quality of clustering.</p>
-</li>
-<li><p>Some that do not need a ground truth are Silhouette coefficient, Calinski–Harabasz index, and Davies–Bouldin Index. Homogeneity Score, Completeness Score, and V Measure need a ground truth.</p>
-</li>
+<li>comparing how well the predicted clusters compare with the ground truth and</li>
+<li>checking if the generated clusters are consistent.</li>
 </ul>
+<p>The second approach is the only option if no ground truths are available.</p>
+<p>There are several coefficients that quantify the quality of clustering. Some that do not need a ground truth are Silhouette coefficient, Calinski–Harabasz index, and Davies–Bouldin index. Others such as homogeneity Score, completeness score, and V Measure need a ground truth.</p>
 </div>
 </div>
 </div>
@@ -7666,7 +7662,7 @@ $$</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">metrics</span>
@@ -7757,7 +7753,7 @@ $$</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics.cluster</span> <span class="kn">import</span> <span class="n">pair_confusion_matrix</span>
@@ -7806,7 +7802,7 @@ $$FMI = \frac{TP}{\sqrt{(TP + FP) (TP + FN)}}.$$</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">FMI</span> <span class="o">=</span> <span class="n">TP</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">TP</span> <span class="o">+</span> <span class="n">FP</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">TP</span> <span class="o">+</span> <span class="n">FN</span><span class="p">))</span>
@@ -7872,7 +7868,7 @@ $$FMI = \frac{TP}{\sqrt{(TP + FP) (TP + FN)}}.$$</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">clusim.clustering</span> <span class="kn">import</span> <span class="n">Clustering</span>
@@ -7937,18 +7933,7 @@ FMI = 0.0, NMI = 0.6666666666666665, elem-cent = 0.33333333333333326
     rogers_tanimoto_index       0.5319148936170213
           southwood_index      0.45454545454545453
       pearson_correlation      0.00102880658436214
-         corrected_chance      0.17107186225250312
-      sample_expected_sim      0.10526315789473684
-                      nmi       0.5451600159416435
-                       mi       0.8233232815796736
-                   adj_mi       0.3410389011275906
-                      rmi       0.1464053299155769
-                       vi       1.3738364418444755
-       geometric_accuracy       0.7777777777777778
-          overlap_quality                     -0.0
-                     onmi       0.6303315236619905
-              omega_index      0.26666666666666655
-         corrected_chance      0.17107186225250312
+         corrected_chance      0.16994265720286564
       sample_expected_sim      0.10526315789473684
                       nmi       0.5451600159416435
                        mi       0.8233232815796736
