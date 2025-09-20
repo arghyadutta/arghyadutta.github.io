@@ -1,6 +1,6 @@
 :root {
     --color-text: #000;
-    --color-accent: #a00; /* darker red for better contrast */
+    --color-accent: #a00;
     --color-bg: #fff;
     --color-muted: #eee;
     --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -32,11 +32,11 @@ mark {
 a:link,
 a:visited {
     color: var(--color-text);
-    text-decoration-line: underline;
+    /* text-decoration-line: underline;
     text-decoration-style: dotted;
     text-decoration-color: var(--color-accent);
     text-decoration-thickness: 1.5px;
-    transition: all 0.2s ease;
+    transition: all 0.2s ease; */
 }
 
 a:hover,
