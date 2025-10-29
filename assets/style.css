@@ -8,11 +8,11 @@
 
 body {
     font-family: var(--font-body);
-    font-size: 18px;
+    font-size: 20px;
     background-color: var(--color-bg);
     color: var(--color-text);
     margin: 1em auto 10em;
-    max-width: 680px;
+    max-width: 800px;
     padding: 0 0.5em;
     line-height: 1.5;
 }
