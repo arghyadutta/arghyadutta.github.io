@@ -1,8 +1,10 @@
 :root {
-    --color-text: #000;
-    --color-accent: #a00;
+    --color-text: #1f1f1f;
     --color-bg: #fff;
     --color-muted: #eee;
+    --color-accent: #a00;
+    --color-link: #004aba;
+    /* --color-link: blue; */
     --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
@@ -31,9 +33,9 @@ mark {
 
 a:link,
 a:visited {
-    color: var(--color-text);
-    /* text-decoration-line: underline;
-    text-decoration-style: dotted;
+    color: var(--color-link);
+    text-decoration-line: none;
+    /* text-decoration-style: dotted;
     text-decoration-color: var(--color-accent);
     text-decoration-thickness: 1.5px;
     transition: all 0.2s ease; */
