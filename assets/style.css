@@ -38,44 +38,13 @@
     --color-muted: #7a7060;
     --color-accent: #2d4a3e;
     --color-link: #004aba;
-    /* --color-link: blue; */
     --font-body: 'EB Garamond', Georgia, serif;
     --font-mono: 'DM Mono', monospace;
 }
-.section-label {
-    font-family: var(--font-mono, monospace);
-    font-size: 0.68rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--color-muted);
-    margin-bottom: 12px;
-    margin-top: 2.5em;
-}
 
-.contact-row {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
-.contact-row a {
-    color: var(--color-accent);
-    width: fit-content;
-}
-
-.contact-row a:hover {
-    border-bottom: 1px solid var(--color-accent);
-}
-.contact-row a,
-.contact-row span {
-    font-family: var(--font-body);
-    font-size: 1rem;
-    color: var(--color-text);
-    border-bottom: none;
-}
 body {
     font-family: var(--font-body);
-    font-size: 20px;
+    font-size: 22px;
     background-color: var(--color-bg);
     color: var(--color-text);
     margin: 1em auto 10em;
@@ -100,10 +69,10 @@ a:link,
 a:visited {
     color: var(--color-link);
     text-decoration-line: none;
-    /* text-decoration-style: dotted;
+    text-decoration-style: dotted;
     text-decoration-color: var(--color-accent);
     text-decoration-thickness: 1.5px;
-    transition: all 0.2s ease; */
+    transition: all 0.2s ease;
 }
 h1 em {
     display: block;
@@ -129,7 +98,7 @@ a:focus-visible {
 h1,
 h2,
 h3 {
-    font-weight: 500;
+    font-weight: 400;
     margin-top: 1em;
 }
 
