@@ -44,7 +44,7 @@
 
 body {
     font-family: var(--font-body);
-    font-size: 22px;
+    font-size: 24px;
     background-color: var(--color-bg);
     color: var(--color-text);
     margin: 1em auto 10em;
