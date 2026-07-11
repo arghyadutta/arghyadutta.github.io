@@ -38,8 +38,8 @@
     --color-muted: #7a7060;
     --color-accent: #2d4a3e;
     --color-link: #004aba;
-    --font-body: 'EB Garamond', Georgia, serif;
-    --font-mono: 'DM Mono', monospace;
+    --font-body: Georgia, serif;
+    --font-mono: monospace;
 }
 
 body {
