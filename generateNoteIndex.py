@@ -89,6 +89,7 @@ CATEGORIES = {
         "buddhism",
         "silence",
         "melancholia",
+        "stupidity"
     ],
     "Language and Literature": [
         "fiction",
@@ -108,8 +109,7 @@ CATEGORIES = {
         "history",
         "society",
         "foodNDrink",
-        "funny",
-        "stupidity",
+        "funny"
     ],
 }
 UNCATEGORIZED = "Uncategorized"
