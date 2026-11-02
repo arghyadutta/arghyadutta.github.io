@@ -1,7 +1,123 @@
 import os
 import glob
+import re
+from html import escape
 from datetime import datetime
 from bs4 import BeautifulSoup
+
+CATEGORIES = {
+    "Physics": [
+        "qMech",
+        "qMechMath",
+        "dynamics",
+        "ehrenfest",
+        "bec",
+        "electromagnetism",
+        "relativity",
+        "enggPhysics",
+        "physicsFreeBooks",
+        "physicsExperiments",
+        "dimensionalAnalysis",
+        "timesArrow",
+        "loschmidtParadox",
+        "statMechReadingMaterial",
+        "statMechCourse",
+        "phaseDiagram",
+        "nld",
+        "complexity",
+        "saw",
+        "mathematicalMethods",
+        "biophysics",
+    ],
+    "Mathematics": [
+        "linearAlgebra",
+        "combinatorics",
+        "statistics",
+        "statPython",
+        "bayesian",
+        "simpsonsParadox",
+    ],
+    "Machine Learning and AI": [
+        "machinelearning",
+        "ai",
+        "deepLearning",
+        "learnability",
+        "clustPerformance",
+        "geneticAlgorithm",
+        "symbolicRegression",
+        "subgroupDiscovery",
+    ],
+    "Other Sciences": [
+        "biology",
+        "hydrophobicity",
+        "chemistry",
+    ],
+    "Programming": [
+        "python",
+        "rProgramming",
+        "hpc",
+        "softwareTools",
+        "openSource",
+        "visualization",
+        "excelShortcuts",
+    ],
+    "Writing and Knowledge Management": [
+        "latex",
+        "plainText",
+        "pkm",
+        "writing",
+        "stationery",
+        "wellWrittenPapers",
+        "dictionary",
+    ],
+    "Academia, Teaching, and Learning": [
+        "teaching",
+        "teaching-ai",
+        "learning",
+        "academicAdvice",
+        "academiaIssues",
+        "academiaFeatures",
+        "biography",
+    ],
+    "Philosophy and Religion": [
+        "philosophyResources",
+        "philosophyOfScience",
+        "stoicism",
+        "religions",
+        "logic",
+        "advaitaVedanta",
+        "buddhism",
+        "silence",
+        "melancholia",
+    ],
+    "Language and Literature": [
+        "fiction",
+        "poetry",
+        "leguin",
+        "cSLewis",
+        "german",
+        "sanskrit",
+        "bookNLibrary",
+        "blogs",
+    ],
+    "Arts and Culture": [
+        "art",
+        "music",
+        "indian-classical-music",
+        "western-classical-music",
+        "history",
+        "society",
+        "foodNDrink",
+        "funny",
+        "stupidity",
+    ],
+}
+UNCATEGORIZED = "Uncategorized"
+
+# Reverse lookup: file stem -> category
+STEM_TO_CATEGORY = {
+    stem: category for category, stems in CATEGORIES.items() for stem in stems
+}
 
 
 def get_files_sorted_by_mtime(directory, extension=".html"):
@@ -15,13 +131,42 @@ def extract_title_from_html(file_path):
     try:
         with open(file_path, "r", encoding="utf-8") as f:
             soup = BeautifulSoup(f, "html.parser")
-            title = soup.find("h1")
-            return title.text.strip() if title else os.path.basename(file_path)
-    except Exception as e:
+        title = soup.find("h1")
+        return title.text.strip() if title else os.path.basename(file_path)
+    except Exception:
         return os.path.basename(file_path)
 
 
+def slugify(text):
+    return re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")
+
+
+def group_files_by_category(files):
+    """Return {category: [files]} keeping the incoming (mtime-desc) order."""
+    grouped = {category: [] for category in CATEGORIES}
+    grouped[UNCATEGORIZED] = []
+
+    for file in files:
+        stem = os.path.splitext(os.path.basename(file))[0]
+        grouped[STEM_TO_CATEGORY.get(stem, UNCATEGORIZED)].append(file)
+
+    # Warn about stale names in CATEGORIES (typos or deleted files)
+    existing = {os.path.splitext(os.path.basename(f))[0] for f in files}
+    for stem, category in STEM_TO_CATEGORY.items():
+        if stem not in existing:
+            print(f"Warning: '{stem}' is listed under '{category}' but has no file.")
+
+    if grouped[UNCATEGORIZED]:
+        names = ", ".join(os.path.basename(f) for f in grouped[UNCATEGORIZED])
+        print(f"Note: uncategorized files -> {names}")
+
+    return grouped
+
+
 def generate_index_html(files, output_file="notebooks.html"):
+    grouped = group_files_by_category(files)
+    visible = [(cat, fs) for cat, fs in grouped.items() if fs]
+
     html_content = """<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,7 +188,7 @@ def generate_index_html(files, output_file="notebooks.html"):
 </blockquote>
 
 <p>
-    A collection of notes and annotated bibliographies, inspired by <a href="http://bactra.org/notebooks/">Cosma Shalizi's notebooks</a>. Some entries are detailed, others just placeholders. The aim is to keep track of ideas I’ve explored or hope to explore and online resources that I've found useful. As these notes are mostly for my own use, they contain gaps (and few mistakes). If you spot one, please let me know: arghya.d@srmap.edu.in
+    A collection of notes and annotated bibliographies, inspired by <a href="http://bactra.org/notebooks/">Cosma Shalizi's notebooks</a>. Some entries are detailed, others just placeholders. The aim is to keep track of ideas I’ve explored or hope to explore and online resources that I've found useful. As these notes are mostly for my own use, they contain gaps (and a few mistakes). If you spot one, please let me know: arghya.d@srmap.edu.in
 </p>
 
 <input type="text" id="searchBox" onkeyup="searchSite()" placeholder="Search">
@@ -51,20 +196,30 @@ def generate_index_html(files, output_file="notebooks.html"):
 
 <script src="search.js"></script>
 
-
-    <dl>
 """
-    for file in files:
-        mtime = datetime.fromtimestamp(os.path.getmtime(file)).strftime("%B %d, %Y")
-        filename = os.path.basename(file)
-        title = extract_title_from_html(file)
-        html_content += (
-            f'<dt><a href="notebooks/{filename}">{title}</a> ({mtime})</dt>\n'
-        )
 
-    html_content += """
-    </dl>
-</body>
+    # Table of contents linking to each category
+    html_content += "    <nav>\n    <p>\n"
+    html_content += " &middot;\n".join(
+        f'        <a href="#{slugify(cat)}">{escape(cat)}</a> ({len(fs)})'
+        for cat, fs in visible
+    )
+    html_content += "\n    </p>\n    </nav>\n\n"
+
+    # One section per category
+    for category, category_files in visible:
+        html_content += f'    <h2 id="{slugify(category)}">{escape(category)}</h2>\n'
+        html_content += "    <dl>\n"
+        for file in category_files:
+            mtime = datetime.fromtimestamp(os.path.getmtime(file)).strftime("%B %d, %Y")
+            filename = os.path.basename(file)
+            title = escape(extract_title_from_html(file))
+            html_content += (
+                f'    <dt><a href="notebooks/{filename}">{title}</a> ({mtime})</dt>\n'
+            )
+        html_content += "    </dl>\n\n"
+
+    html_content += """</body>
 </html>
 """
 
