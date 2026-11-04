@@ -86,7 +86,6 @@ CATEGORIES = {
         "religions",
         "logic",
         "advaitaVedanta",
-        "buddhism",
         "silence",
         "melancholia",
         "stupidity"
