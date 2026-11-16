@@ -15,7 +15,6 @@ CATEGORIES = {
         "electromagnetism",
         "relativity",
         "enggPhysics",
-        "physicsFreeBooks",
         "physicsExperiments",
         "dimensionalAnalysis",
         "timesArrow",
@@ -28,6 +27,7 @@ CATEGORIES = {
         "saw",
         "mathematicalMethods",
         "biophysics",
+        "condensedmatter"
     ],
     "Mathematics": [
         "linearAlgebra",
@@ -88,7 +88,8 @@ CATEGORIES = {
         "advaitaVedanta",
         "silence",
         "melancholia",
-        "stupidity"
+        "stupidity",
+        "love"
     ],
     "Language and Literature": [
         "fiction",
