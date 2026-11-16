@@ -100,6 +100,7 @@ CATEGORIES = {
         "sanskrit",
         "bookNLibrary",
         "blogs",
+        "crossword"
     ],
     "Arts and Culture": [
         "art",
