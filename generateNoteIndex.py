@@ -189,7 +189,7 @@ def generate_index_html(files, output_file="notebooks.html"):
 </blockquote>
 
 <p>
-    A collection of notes and annotated bibliographies, inspired by <a href="http://bactra.org/notebooks/">Cosma Shalizi's notebooks</a>. Some entries are detailed, others just placeholders. The aim is to keep track of ideas I’ve explored or hope to explore and online resources that I've found useful. As these notes are mostly for my own use, they contain gaps (and a few mistakes). If you spot one, please let me know: arghya.d@srmap.edu.in
+    A collection of notes and annotated bibliographies, inspired by <a href="http://bactra.org/notebooks/">Cosma Shalizi's notebooks</a>. Some entries are detailed, others are only placeholders. The aim is to keep track of ideas I’ve explored or hope to explore and online resources that I've found useful. As these notes are mostly for my own use, they contain gaps; if you spot one, please let me know: arghya.d@srmap.edu.in
 </p>
 
 <input type="text" id="searchBox" onkeyup="searchSite()" placeholder="Search">
@@ -200,7 +200,7 @@ def generate_index_html(files, output_file="notebooks.html"):
 """
 
     # Table of contents linking to each category
-    html_content += "    <nav>\n    <p>\n"
+    html_content += "    <nav>\n    <p>Topics: \n"
     html_content += " &middot;\n".join(
         f'        <a href="#{slugify(cat)}">{escape(cat)}</a> ({len(fs)})'
         for cat, fs in visible
